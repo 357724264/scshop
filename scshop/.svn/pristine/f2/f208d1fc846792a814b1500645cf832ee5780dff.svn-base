@@ -1,0 +1,20 @@
+$headline-ff:"Helvetica Neue","Helvetica","Lucida Grande","Arial","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","sans-serif";
+$mainline-ff:Arial, Verdana, Helvertica, sans-serif;
+
+$fontSize:.2rem;
+$bodycolor:#333;
+$bodyback:#f5f5f5;
+
+$ele-size12:.23rem;
+$ele-size13:.24rem;
+$ele-size14:.26rem;
+$ele-size15:.28rem;
+$ele-size16:.3rem;
+$ele-size17:.33rem;
+$ele-margin:.2rem;
+$ele-padding:.2rem;
+
+$ele-backcolor:#d71416;
+$ele-fontcolor:#d71416;
+
+$nav-height:.94rem;

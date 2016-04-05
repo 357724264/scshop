@@ -1,0 +1,2 @@
+1.cart中 itemjson 格式
+{"SHOPID":{"name":xxx,"cart":[{name:xxx,pic:xxx,model:xxxx,price:xxxx,id:xxx,num:xxx},{name:xxx,pic:xxx,model:xxxx,price:xxxx,id:xxx,num:xxx}]},"SHOPID":{"name":xxx,"cart":[{name:xxx,pic:xxx,model:xxxx,price:xxxx,id:xxx,num:xxx},{name:xxx,pic:xxx,model:xxxx,price:xxxx,id:xxx,num:xxx}]}}

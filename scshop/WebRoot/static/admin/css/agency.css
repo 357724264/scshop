@@ -1,0 +1,135 @@
+html{
+	font-size:62.5%;
+}
+body {
+	font-family: 'microsoft yahei', Helvetica, Arial;
+	font-size:1.2rem;
+	background-color: #fff;
+	color: #999;
+	overflow-x: hidden;
+}
+.fix{
+	padding-top:3.4rem;
+}
+h1{
+	font-size:2.4rem;
+}
+:root { -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;-webkit-transform-origin-x: 0;
+ -o-text-size-adjust: none; text-size-adjust: none;}
+
+.logo-area{
+	width:1000px;
+	margin:0px auto;
+	height:85px;
+}
+.login-area{
+	width:100%;
+	height:430px;
+}
+.login-area .login-box{
+	width:350px;
+	height:300px;
+	padding:10px 17px;
+	box-sizing:border-box;
+	background-color:#fff;
+	margin-top:63px;
+}
+.login-box .form-group,.register-area .form-group{
+	margin-bottom:5px;
+	position:relative;
+}
+.login-box .form-group .form-control,.register-area .form-group .form-control{
+	line-height:40px;
+	height:40px;
+	border-radius:0;
+	outline:none;
+	padding:0px;
+}
+.login-box #username{
+	background:url(../images/i_user.png) no-repeat 0 0;
+	background-size:40px 40px;
+	padding-left:40px;
+	text-indent:10px;
+}
+.login-box #password{
+	background:url(../images/i_pass.png) no-repeat 0 0;
+	background-size:40px 40px;
+	padding-left:40px;
+	text-indent:10px;
+}
+.btn-zdy,#register-btn{
+	width:100%;
+	height:40px;
+	margin-top:6px;
+	color:#fff;
+	outline:none;
+	border:0px;
+	font-size:1.5rem;
+	-webkit-appearance:none;
+	background-color:#ba3a17;
+}
+.btn-zdy:hover,.btn-zdy:active,.btn-zdy:visited{
+	color:#fff;
+	background-color:#ba3a17;
+}
+.errors{
+	height:2rem;
+	line-height:2rem;
+	display:block;
+}
+.has-error .form-control{
+	border-color:#e5007f;
+}
+.has-error .errors{
+	color:#e5007f;
+}
+.other{
+	width:100%;
+	margin-top:25px;
+}
+.other a{
+	font-size:1.5rem;
+	color:#666;
+}
+.sign{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	bottom:20px;
+	left:0px;
+}
+
+.register-area{
+	margin:4rem 0;
+}
+.register-area i{
+	font-style:normal;
+	color:red;
+	font-size:1.3rem;
+	margin-right:3px;
+}
+.register-area .control-label{
+	padding-top:11px;
+}
+.register-area input{
+	text-indent:10px;
+}
+.register-area .check-regist{
+	font-size:1.5rem;
+}
+.register-area .check-regist span{
+	font-size:1rem;
+}
+.register-area .check-regist a{
+	color:#ba3a17;
+}
+.register-area .ident{
+	position:relative;
+}
+#identifying-btn{
+	width:120px;
+	height:40px;
+	position:absolute;
+	right:15px;
+	top:0;
+}

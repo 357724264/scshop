@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:oscache="http://www.springmodules.org/schema/oscache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springmodules.org/schema/oscache http://www.springmodules.org/schema/cache/springmodules-oscache.xsd">
+
+	<!-- JDBC参数配置 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		lazy-init="true">
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="locations">
+			<list>
+				<value>classpath:/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 数据源配置 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<!-- 设置JDBC驱动名称 -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<!-- 设置JDBC连接URL -->
+		<property name="url" value="${jdbc.url}" />
+		<!-- 设置数据库用户名 -->
+		<property name="username" value="${jdbc.username}" />
+		<!-- 设置数据库密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<!-- 设置连接池初始值 -->
+		<property name="initialSize" value="5" />
+		<!-- 设置连接池最大值 -->
+		<property name="maxActive" value="100" />
+		<!-- 设置连接池最小空闲值 -->
+		<property name="minIdle" value="20" />
+		<!-- 设置连接池最大空闲值 -->
+		<property name="maxIdle" value="50" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!-- 配置Hibernate拦截器,自动填充数据的插入、更新时间 -->
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<!-- <value> -->
+			<!-- 设置数据库方言 hibernate.dialect=${hibernate.dialect} -->
+			<!-- 设置自动创建|更新|验证数据库表结构 hibernate.hbm2ddl.auto=update -->
+			<!-- 输出SQL语句到控制台 hibernate.show_sql=${hibernate.show_sql} -->
+			<!-- 格式化输出到控制台的SQL语句 hibernate.format_sql=${hibernate.format_sql} -->
+			<!-- 是否开启二级缓存 hibernate.cache.use_second_level_cache=false -->
+			<!-- 配置二级缓存产品 hibernate.cache.provider_class=org.hibernate.cache.OSCacheProvider -->
+			<!-- 是否开启查询缓存 hibernate.cache.use_query_cache=false -->
+			<!-- 数据库批量查询数 hibernate.jdbc.fetch_size=50 -->
+			<!-- 数据库批量更新数 hibernate.jdbc.batch_size=30 -->
+			<!--</value> -->
+			<props>
+				<!-- <prop key="hibernate.proxool.xml">proxool.xml</prop> -->
+				<!-- 别名<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop> -->
+				<prop key="hibernate.cache.provider_class">com.googlecode.hibernate.memcached.MemcachedCacheProvider
+				</prop>
+
+				<!-- 二级缓存服务地址和端口 -->
+				<prop key="hibernate.memcached.servers">127.0.0.1:11211</prop>
+
+				<!-- memcache的调用客户端 -->
+				<prop key="hibernate.memcached.memcacheClientFactory">net.rubyeye.xmemcached.utils.hibernate.XmemcachedClientFactory
+				</prop>
+				<!-- <prop key="hibernate.proxool.pool_alias">webtools_proxool</prop> -->
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="generate_statistics">false</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+			</props>
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.wudianyi.wb.scshop.entity.Ad</value>
+				<value>com.wudianyi.wb.scshop.entity.Address</value>
+				<value>com.wudianyi.wb.scshop.entity.Admin</value>
+				<value>com.wudianyi.wb.scshop.entity.Agent</value>
+				<value>com.wudianyi.wb.scshop.entity.AgentBill</value>
+				<value>com.wudianyi.wb.scshop.entity.Autojoblog</value>
+				<value>com.wudianyi.wb.scshop.entity.Brand</value>
+				<value>com.wudianyi.wb.scshop.entity.Cart</value>
+				<value>com.wudianyi.wb.scshop.entity.Category</value>
+				<value>com.wudianyi.wb.scshop.entity.Country</value>
+				<value>com.wudianyi.wb.scshop.entity.Comment</value>
+				<value>com.wudianyi.wb.scshop.entity.Coupon</value>
+				<value>com.wudianyi.wb.scshop.entity.Customer</value>
+				<value>com.wudianyi.wb.scshop.entity.Jflog</value>
+				<value>com.wudianyi.wb.scshop.entity.Kuaidi</value>
+				<value>com.wudianyi.wb.scshop.entity.Member</value>
+				<value>com.wudianyi.wb.scshop.entity.Order</value>
+				<value>com.wudianyi.wb.scshop.entity.OrderItem</value>
+				<value>com.wudianyi.wb.scshop.entity.Product</value>
+				<value>com.wudianyi.wb.scshop.entity.SeckillProduct</value>
+				<value>com.wudianyi.wb.scshop.entity.ShopForm</value>
+				<value>com.wudianyi.wb.scshop.entity.Shop</value>
+				<value>com.wudianyi.wb.scshop.entity.SubProduct</value>
+				<value>com.wudianyi.wb.scshop.entity.WebInfo</value>
+				<value>com.wudianyi.wb.scshop.entity.UserCoupon</value>
+				<value>com.wudianyi.wb.scshop.entity.WebInfo</value>
+				<value>com.wudianyi.wb.scshop.entity.Inventory</value>
+
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- 设置需要进行Spring注解扫描的类包 -->
+	<context:component-scan base-package="com.wudianyi.wb.scshop" />
+
+	<!-- 使用AspectJ方式配置AOP -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<aop:config proxy-target-class="true" />
+
+	<!-- 使用注解方式定义事务 -->
+	<tx:annotation-driven proxy-target-class="true"
+		transaction-manager="transactionManager" />
+
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 配置事务传播特性 -->
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="load*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置哪些类的哪些方法参与事务 -->
+	<aop:config>
+		<aop:advisor pointcut="execution(* com.wudianyi.wb.scshop.service..*.*(..))"
+			advice-ref="transactionAdvice" />
+	</aop:config>
+
+	<!-- 配置freemarkerManager -->
+	<bean id="freemarkerManager" class="org.apache.struts2.views.freemarker.FreemarkerManager" />
+
+	<!-- memcached -->
+	<bean name="memcachedClientBuilder" class="net.rubyeye.xmemcached.XMemcachedClientBuilder">
+		<!-- XMemcachedClientBuilder have two arguments.First is server list,and 
+			second is weights array. -->
+		<constructor-arg>
+			<list>
+				<bean class="java.net.InetSocketAddress">
+					<constructor-arg>
+						<value type="java.lang.String">localhost</value>
+					</constructor-arg>
+					<constructor-arg>
+						<value>11211</value>
+					</constructor-arg>
+				</bean>
+				<!-- <bean class="java.net.InetSocketAddress"> <constructor-arg> <value>localhost</value> 
+					</constructor-arg> <constructor-arg> <value>12001</value> </constructor-arg> 
+					</bean> -->
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>1</value>
+				<!-- <value>2</value> -->
+			</list>
+		</constructor-arg>
+		<!-- <property name="connectionPoolSize" value="50"></property> -->
+		<property name="commandFactory">
+			<bean class="net.rubyeye.xmemcached.command.TextCommandFactory"></bean>
+		</property>
+		<property name="sessionLocator">
+			<bean class="net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator"></bean>
+		</property>
+		<property name="transcoder">
+			<bean class="net.rubyeye.xmemcached.transcoders.SerializingTranscoder" />
+		</property>
+	</bean>
+	<!-- Use factory bean to build memcached client -->
+	<bean name="memcachedClient" factory-bean="memcachedClientBuilder"
+		factory-method="build" destroy-method="shutdown" />
+	<!-- SMTP邮件服务配置 -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.timeout">25000</prop>
+				<prop key="mail.smtp.socketFactory.fallback">true</prop>
+				<!-- SSL连接配置 -->
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<!--<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop> -->
+			</props>
+		</property>
+	</bean>
+	<!-- SMTP邮件异步发送 -->
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<!-- 核心线程数 -->
+		<property name="corePoolSize" value="10" />
+		<!-- 最大线程数 -->
+		<property name="maxPoolSize" value="50" />
+		<!-- 最大队列数 -->
+		<property name="queueCapacity" value="10000" />
+		<!-- 线程池维护线程所允许的空闲时间 -->
+		<property name="keepAliveSeconds" value="60" />
+	</bean>
+</beans>

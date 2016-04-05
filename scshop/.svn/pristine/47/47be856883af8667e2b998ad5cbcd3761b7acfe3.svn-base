@@ -1,0 +1,597 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+/*
+ * SETTING
+ * variables........................... var memory
+ * mixins.............................. functions
+ *
+ * BASE
+ * shops.scss......................... main css style
+ *       ----shops.html
+ *       ----shops-fenlei.html
+ *       ----shops-all.html
+ *
+ */
+
+@import "variables","mixins","compass/reset";
+*{
+    box-sizing:border-box;
+}
+body{
+    font-size: $fontSize;
+    color: $bodycolor;
+    background-color:$bodyback;
+    font-family:$mainline-ff;
+}
+a{
+    color:$bodycolor;
+    text-decoration:none;
+}
+.content{
+	width:100%;
+}
+
+$shopshead-height:.9rem;
+$shopsnav-height:1rem;
+.paddbody{
+	padding-top:$shopshead-height;
+	padding-bottom:$shopsnav-height;
+}
+.fl-padd{
+	padding-top:$shopshead-height;
+}
+
+/*shops style start*/
+.shops-head{
+	width:100%;
+	height:$shopshead-height;
+	text-align:center;
+	background-color:#fff;
+	position:relative;
+
+	&:after{
+		@include lineafter-bottom();
+	}
+
+	.head-left{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:2;
+		width:.8rem;
+		height:$shopshead-height;
+		line-height:$shopshead-height;
+
+		i{
+			font-size:.45rem;
+		}
+	}
+	.head-tit{
+		width:100%;
+		height:100%;
+		padding:.11rem;
+		line-height:.68rem;
+		padding-left:$shopshead-height;
+		padding-right:$shopshead-height;
+		position:relative;
+
+		.head-ss{
+			border:1px solid #c1c1c1;
+			display:block;
+			width:100%;
+			height:100%;
+			position:relative;
+			padding-left:.55rem;
+			text-align:left;
+			color:#999;
+			font-size:$ele-size13;
+			@include radius(.08rem);
+		}
+		.ssicon{
+			position:absolute;
+			top:-.03rem;
+			left:.1rem;
+			z-index:2;
+			color:#999;
+			font-size:.3rem !important;
+		}
+		.flssbox{
+			position:relative;
+			width:100%;
+			height:100%;
+			display:block;
+
+			input{
+				outline:none;
+				-webkit-appearance:none;
+			}
+		}
+	}
+	.head-right{
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:2;
+		width:.8rem;
+		height:$shopshead-height;
+		line-height:$shopshead-height;
+		font-size:$ele-size12;
+
+		i{
+			font-size:.45rem;
+		}
+	}
+}
+.headfixed{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+}
+
+.shops-mess{
+	width:100%;
+	background-color:#fff;
+	position:relative;
+
+	&:before{
+		@include lineafter-top();
+	}
+	&:after{
+		@include lineafter-bottom();
+	}
+
+	.dp-mpbox{
+		width:100%;
+		height:2.4rem;
+		padding:.3rem;
+		background:url(../../images/2000.jpg) no-repeat;
+		background-size:cover;
+		position:relative;
+
+		.dp-logo{
+			position:absolute;
+			left:.3rem;
+			bottom:.3rem;
+			width:1.8rem;
+			height:.65rem;
+			z-index:2;
+			display:inline-block;
+
+			img{
+				display:inline;
+				width:100%;
+				height:100%;
+			}
+		}
+		.dp-name{
+			position:absolute;
+			left:0;
+			bottom:.3rem;
+			width:100%;
+			height:.65rem;
+			line-height:.65rem;
+			padding-left:2.2rem;
+			color:#fff;
+			font-weight:600;
+			font-size:$ele-size17;
+
+			@include overflow-1row();
+		}
+	}
+	.dp-nav{
+		width:100%;
+		display:block;
+		backface-visibility:hidden;
+
+		.dp-item{
+			position:relative;
+		    display:table-cell;
+		    width:1%;
+		    height:1rem;
+		    text-align:center;
+		    vertical-align:middle;
+		    font-size:$ele-size12;
+		    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+			.dpnav-tit{
+				display:block;
+				margin-top:.1rem;
+			}
+		}
+	}
+}
+
+.shops-box{
+	width:100%;	
+	padding-left:$ele-padding;
+	padding-right:$ele-padding;
+	padding-bottom:$ele-padding;
+	background-color:$bodyback;
+	position:relative;
+
+	&:before{
+		@include lineafter-top();
+	}
+	&:after{
+		@include lineafter-bottom();
+	}
+	&.mg-top{
+		margin-top:$ele-margin;
+	}
+}
+.sp-b-tit{
+	line-height:.7rem;
+	margin-left:-$ele-padding;
+	margin-right:-$ele-padding;
+	padding:0 $ele-padding;
+	background-color:#fff;
+	font-size:$ele-size16;
+}
+.shops-area{
+	width:100%;
+	padding-right:.2rem;
+	position:relative;
+
+	&:after{
+		@include clearfix();
+	}
+
+	a{
+		display:block;
+		position:relative;
+		float:left;
+		width:50%;
+		height:4.1rem;
+		margin-right:.2rem;
+		margin-bottom:.1rem;
+		margin-top:.1rem;
+		border:.01rem solid #ddd;
+		background-color:#fff;
+		padding:.08rem;
+
+		.shops-img{
+			width:100%;
+			height:2.5rem;
+
+			img{
+				width:100%;
+				height:100%;
+			}
+		}
+		.spgj{
+			position:absolute;
+			top:.08rem;
+			right:.08rem;
+			display:table-cell;
+			vertical-align:middle;
+			font-size:$ele-size13;
+
+			img{
+				width:.3rem;
+				height:.3rem;
+				margin-right:.05rem;
+				display:inline-block;
+				vertical-align:middle;
+			}
+			span{
+				display:inline-block;
+				margin-top:.04rem;
+				vertical-align:middle;
+			}
+		}
+		.shops-name{
+			width:100%;
+			font-size:$ele-size15;
+			line-height:.7rem;
+
+			@include overflow-1row();
+		}
+		.shops-price{
+			width:100%;
+			line-height:.3rem;
+			font-size:$ele-size15;
+			color:$ele-fontcolor;
+			position:relative;
+			.spzk{
+				padding:0 .1rem;
+				border:1px solid $ele-fontcolor;
+				font-size:$ele-size12;
+				border-radius:.04rem;
+				position:relative;
+				top:-.02rem;
+				margin-left:.08rem;
+			}
+		}
+		.shops-cdj{
+			line-height:.5rem;
+			font-size:$ele-size12;
+			color:#666;
+		}
+	}
+	a:nth-child(2n){
+		margin-right:-.2rem;
+	}
+}
+.shops-all{
+	width:3rem;
+	height:.7rem;
+	line-height:.7rem;
+	display:block;
+	text-align:center;
+	margin:.4rem auto;
+	border:1px solid #ddd;
+	border-radius:.05rem;
+	font-size:$ele-size14;
+}
+
+.shops-nav{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	background-color:#fff;
+	z-index:100;
+
+	&:before{
+		@include lineafter-top();
+	}
+	&:after{
+		@cinclude clearfix();
+	}
+	.sp-menu{
+		position:relative;
+		width:33.33%;
+		float:left;
+		text-align:center;
+		font-size:$ele-size13;
+		line-height:$shopsnav-height;
+
+		&:before{
+			@include lineafter-left();
+		}
+		.bt-name{
+			display:block;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+		}
+		.new-sub{
+			position:absolute;
+			width:96%;
+			bottom:1.15rem;
+			left:2%;
+			background-color:#fff;
+			border:.01rem solid #ddd;
+			display:none;
+			overflow:visible !important;
+			@include radius(.06rem);
+
+			.subbox{
+				width:100%;
+
+				li{
+					line-height:.8rem;
+					font-size:$ele-size12;
+
+					a{
+						display:block;
+						-webkit-tap-highlight-color: rgba(0,0,0,0);
+						position:relative;
+						&:after{
+							@include lineafter-bottom();
+						}
+						i{
+							position:absolute;
+							top:0;
+							right:0;
+							color:#999;
+						}
+					}
+					.third-btn.active{
+						color:$ele-fontcolor;
+						i{
+							color:$ele-fontcolor;
+						}
+					}
+				}
+			}
+			.tiggle{
+				width:0;
+				height:0;
+				position:absolute;
+				left:50%;
+				margin-left:-.14rem;
+				bottom:-.14rem;
+				border-top:.14rem solid #ddd;
+				border-left:.14rem solid transparent;
+				border-right:.14rem solid transparent;
+				z-index:2;
+			}
+			.innertiggle{
+				width:0;
+				height:0;
+				position:absolute;
+				left:50%;
+				margin-left:-.13rem;
+				bottom:-.13rem;
+				border-top:.13rem solid #fff;
+				border-left:.13rem solid transparent;
+				border-right:.13rem solid transparent;
+				z-index:3;
+			}
+		}
+		.third-sub{
+			position:absolute !important;
+			bottom:0;
+			right:-101%;
+			z-index:2;
+			background-color:#fff;
+			border:.01rem solid #ddd;
+			width:100%;
+			max-height:7rem;
+			overflow-y:auto;
+			display:none;
+			@include radius(.06rem);
+
+		}
+	}
+}
+/*shops style end*/
+
+/*shops-fenlei style start*/
+$dt-height:.9rem;
+
+.fenleibox{
+	width:100%;
+	padding:$ele-padding 0;
+	line-height:$dt-height;
+
+	dt{
+		background-color:#fff;
+		position:static;
+
+		a{
+			display:block;
+		}
+	}
+	dd{
+		@extend dt;
+
+		&:after{
+			@include clearfix();
+		}		
+		padding-right:.05rem;
+		display:block;
+		line-height:$dt-height;
+		position:relative;
+	}
+	dd:last-child:before{
+		@include lineafter-bottom();
+	}
+
+	.alldt{
+		width:100%;
+		margin-bottom:$ele-margin;
+		padding:0 $ele-padding;
+		height:$dt-height;
+		font-size:$ele-size15;
+		position:relative;
+		font-weight:600;
+		z-index:2;
+
+		&:before{
+			@include lineafter-top();
+		}
+		&:after{
+			@include lineafter-bottom();
+		}
+	}
+	.itemdt{
+		width:100%;
+		padding:0 $ele-padding;
+		height:$dt-height;
+		position:relative;
+		font-size:$ele-size15;
+		font-weight:600;
+	}
+	.dtright{
+		float:right;
+		font-size:$ele-size12;
+		color:#d5d5d5;
+	}
+	.itema{
+		width:50%;
+		float:left;
+		margin-right:.05rem;
+		margin-bottom:.06rem;
+		padding:0 $ele-padding;
+		background-color:#f3f3f3;
+		font-size:$ele-size12;
+		vertical-align:middle;
+		color:#666;
+
+		@include overflow-1row();
+
+		&:nth-child(2n){
+			margin-right:-.05rem;
+		}
+		&:nth-last-child(1){
+			margin-bottom:0;
+		}
+		&:nth-last-child(2){
+			margin-bottom:0;
+		}
+	}
+
+}
+/*shops-fenlei style end*/
+
+
+/*shops-all style start*/
+$spall-height:.8rem;
+.spall-padd{
+	padding-top:$shopshead-height + $spall-height;
+}
+.spall-nav{
+	width:100%;
+	background-color:#fff;
+	position:fixed;
+	top:$shopshead-height;
+	left:0;
+	z-index:100;
+	border-bottom:.01rem solid #ddd;
+
+	.spall-tab{
+		position:relative;
+	    display:table-cell;
+	    width:1%;
+	    height:$spall-height;
+	    text-align:center;
+	    vertical-align:middle;
+	    font-size:$ele-size13;
+	    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	    &.active{
+	    	color:$ele-fontcolor;
+	    }
+	    .sort{
+	    	width:.24rem;
+	    	height:.24rem;
+	   		margin-top:-.04rem;
+	    	display:inline-block;
+	    	vertical-align:middle;
+	    	&.asc{
+	    		background:url(../../images/asc.png) no-repeat;
+	    		background-size:.24rem .24rem;
+	    	}
+	    	&.desc{
+	    		background:url(../../images/desc.png) no-repeat;
+	    		background-size:.24rem .24rem;
+	    	}
+	    }
+	}
+}
+
+.gotop{
+	width:.82rem;
+	height:.82rem;
+	line-height:.82rem;
+	background:rgba(255,255,255,.9);
+	border:1px solid #c1c1c1;
+	position:fixed;
+	bottom:.18rem;
+	right:.18rem;
+	z-index:100;
+	text-align:center;
+	display:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	@include radius50();
+
+	i{
+		font-size:$ele-size17;
+	}
+}
+
+/*shops-all style end*/

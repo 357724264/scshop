@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>商城分类</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="fonts/iconfont.css">
+<link rel="stylesheet" href="css/myapp.css">
+</head>
+<body>
+	<div class="page">
+	  	<header class="bar bar-nav scshop-index">
+		    <a class="button button-link button-nav pull-left" href="#" id='scshop-logo' data-transition='slide-out'>
+		      	<img src="images/logo.png" width="auto" height="34px" />
+		    </a>
+	    	<a class="search-index" href='index.html'>
+	    		<div class='sousuo-box'>
+		    		<label class="sousuo-icon iconfont icon-sousuo"></label>
+		    		<div type="search" class='search'></div>
+	    		</div>
+	    	</a>
+	    	<a class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
+		      	<span class="icon iconfont icon-iconsousuo"></span>
+		    </a>
+	  	</header>
+
+	  	<nav class="bar bar-tab">
+		  	<a class="tab-item external" href="#">
+			    <span class="icon iconfont icon-icon40"></span>
+			    <span class="tab-label">首页</span>
+		  	</a>
+		  	<a class="tab-item external active" href="#">
+			    <span class="icon iconfont icon-fenleisousuo"></span>
+			    <span class="tab-label">商城分类</span>
+		  	</a>
+		  	<a class="tab-item external" href="#">
+			    <span class="icon iconfont icon-gouwuche9"></span>
+			    <span class="tab-label">购物车</span>
+		  	</a>
+		  	<a class="tab-item external" href="#">
+			    <span class="icon iconfont icon-wo"></span>
+			    <span class="tab-label">我</span>
+		  	</a>
+		</nav>
+
+	  	<div class="content">
+	  		<div class="buttons-tab scfl-tab">
+			    <a href="#tab1" class="tab-link active button">分类</a>
+			    <a href="#tab2" class="tab-link button">品牌</a>
+		  	</div>
+		  	<div class="tabs scfl-tabs">
+		      	<div id="tab1" class="tab active">
+			  		<div class="scfl-wrap">
+			  			<div class="yscroll1">
+			  				<ul class="category1">
+			  					<li>男装</li>
+			  					<li>女装</li>
+			  					<li class="active">运动户外</li>
+			  					<li>运动户外</li>
+			  					<li>运动户外</li>
+			  					<li>运动户外</li>
+			  					<li>运动户外</li>
+			  					<li>运动户外</li>
+			  				</ul>
+			  			</div>
+			  			<div class="yscroll2">
+			  				<div class="yscroll2-box">
+			  					<div class="yscroll2-area">
+					  				<a class="guanggao" href="#">
+					  					<img src="images/lb.png" class="lazy" />
+					  				</a>
+
+					  				<dl class="category2">
+					  					<dt><span>热销产品</span></dt>
+					  					<dd class="c-list">
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								asdf
+					  							</p>
+					  						</a>
+					  					</dd>
+
+					  					<dt><span>热销产品</span></dt>
+					  					<dd class="c-list">
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								热销产品
+					  							</p>
+					  						</a>
+					  						<a href="#">
+					  							<div class="cover">
+					  								<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+					  							</div>
+					  							<p class="c-l-tit">
+					  								asdf
+					  							</p>
+					  						</a>
+					  					</dd>
+					  				</dl>
+					  			</div>
+				  			</div>
+			  			</div>
+			  		</div>
+			  	</div>
+			  	<div id="tab2" class="tab">
+		      		<div class="brandscroll">
+		      			<dl class="brand-box">
+		      				<dt>全部品牌</dt>
+		      				<dd>
+		      					<a href="#">
+		      						<div class="cover">
+		      							<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+		      						</div>
+		      					</a>
+		      					<a href="#">
+		      						<div class="cover">
+		      							<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+		      						</div>
+		      					</a>
+		      					<a href="#">
+		      						<div class="cover">
+		      							<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+		      						</div>
+		      					</a>
+		      					<a href="#">
+		      						<div class="cover">
+		      							<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+		      						</div>
+		      					</a>
+		      					<a href="#">
+		      						<div class="cover">
+		      							<img src="images/grey.gif" dataimg="images/spsch.jpg" class="lazy" />
+		      						</div>
+		      					</a>
+		      				</dd>
+		      			</dl>
+		      		</div>
+		      	</div>
+			</div>
+	  	</div>
+	</div>
+
+	<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm-extend.min.js' charset='utf-8'></script>   
+    <script type="text/javascript" src="js/lazyload.js"></script><!-- 图片懒加载 -->
+</body>
+</html>

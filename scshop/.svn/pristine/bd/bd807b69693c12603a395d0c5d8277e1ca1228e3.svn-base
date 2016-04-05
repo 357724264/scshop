@@ -1,0 +1,358 @@
+package com.wudianyi.wb.scshop.action.admin;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import com.wudianyi.wb.scshop.action.BaseAction;
+import com.wudianyi.wb.scshop.common.QueryParam;
+import com.wudianyi.wb.scshop.entity.Const;
+import com.wudianyi.wb.scshop.entity.Product;
+import com.wudianyi.wb.scshop.entity.SeckillProduct;
+import com.wudianyi.wb.scshop.entity.Shop;
+import com.wudianyi.wb.scshop.entity.SubProduct;
+import com.wudianyi.wb.scshop.service.ProductService;
+import com.wudianyi.wb.scshop.service.SeckillProductService;
+import com.wudianyi.wb.scshop.service.ShopService;
+import com.wudianyi.wb.scshop.service.SubProductService;
+import com.wudianyi.wb.scshop.util.DateUtil;
+import com.wudianyi.wb.scshop.util.StringUtils;
+import com.wudianyi.wb.scshop.vo.SeckillProductVo;
+
+public class SeckillAction extends BaseAction {
+
+	@Resource
+	private ProductService productService;
+
+	@Resource
+	private SubProductService subProductService;
+
+	@Resource
+	private ShopService shopService;
+
+	@Resource
+	private SeckillProductService seckillProductService;
+
+	private Integer cid;// 商品id
+	private String subProductJson;// 一个json数组，记录具体商品的一些秒杀信息
+									// 格式为[{'id','1','sku':'A123','name':'XL','seckillNum':'100','flashSalePrice','50'},..]
+	private Integer productType;// 1为秒杀 2为限时购
+	private String beginTime;// 促销开始时间
+	private String endTime;// 促销结束时间
+	private String remark;// 备注，申请简述
+	private Double postage;// 邮费
+	private Integer id;// 秒杀申请的id
+	private String productName;
+	private String rejectReason;
+	private String cancelReason;
+	private Integer num;
+
+	/*
+	 * 秒杀申请
+	 */
+	public String apply() {
+
+		Product product = productService.get(cid);
+		QueryParam params = new QueryParam().add("productid", cid);
+		// 如果商品有二级分类，则只查询nodeid=1的subProduct
+		if (!StringUtils.isEmpty(product.getSecondSpecName())) {
+			params.add("nodeid", 1).add("del", 0);
+		}
+		list = subProductService.getList(params, 0, 0, "id", "asc", false);
+		setAttribute("product", product);
+
+		return "apply";
+	}
+
+	// 保存
+	public String save() {
+
+		SeckillProduct seckill = new SeckillProduct();
+		seckill.setProductid(cid);
+		seckill.setProductType(productType);
+		seckill.setRemark(remark);
+		if (!StringUtils.isEmpty(beginTime)) {
+			seckill.setBeginTime(DateUtil.formatDateStr(beginTime,
+					"yyyy/MM/dd HH:mm").getTime());
+		}
+		if (productType == 2 && !StringUtils.isEmpty(endTime)) {
+			seckill.setEndTime(DateUtil.formatDateStr(endTime,
+					"yyyy/MM/dd HH:mm").getTime());
+		}
+		seckill.setSubProductJson(subProductJson);
+		seckill.setStat(0);
+		seckill.setCreateTime(new Date().getTime());
+		seckill.setNum(productType == 1 ? 1 : (num == null ? 1 : num));
+		seckill.setPostage(postage);
+		Integer shopid = (Integer) getSession(Const.SESSION_ADMIN_SHOPID);
+		Shop shop = shopService.get(shopid);
+		seckill.setShopid(shopid);
+		seckill.setShopName(shop.getName());
+		seckill.setProductName(productName);
+
+		seckillProductService.save(seckill);
+
+		return ajaxJsonSuccessMessage("seckill!applyList.action");
+	}
+
+	public String auditList() {
+
+		return "audit_list";
+	}
+
+	public String applyList() {
+
+		return "apply_list";
+	}
+
+	// 查看申请详情
+	public String detail() {
+
+		SeckillProduct seckill = seckillProductService.get(id);
+		JSONArray ary = JSONArray.fromObject(seckill.getSubProductJson());
+		JSONObject obj = null;
+		List<SeckillProductVo> voList = new ArrayList<SeckillProductVo>();
+		SeckillProductVo vo = null;
+		// 设置具体商品的抢购数量以及价格
+		for (int i = 0; i < ary.size(); i++) {
+			obj = ary.getJSONObject(i);
+			vo = new SeckillProductVo();
+			vo.setName(isEmpty(obj.get("name")) ? "" : obj.getString("name"));
+			vo.setSku(isEmpty(obj.get("sku")) ? "" : obj.getString("sku"));
+			vo.setPrice(isEmpty(obj.get("price")) ? 0 : obj.getDouble("price"));
+			vo.setInventory(isEmpty(obj.get("inventory")) ? 0 : obj
+					.getInt("inventory"));
+			vo.setSeckillNum(isEmpty(obj.get("seckillNum")) ? 0 : obj
+					.getInt("seckillNum"));
+			if (seckill.getProductType() == 2) {
+				vo.setSeckillPrice(isEmpty(obj.get("seckillPrice")) ? 0 : obj
+						.getDouble("seckillPrice"));
+			}
+			voList.add(vo);
+		}
+
+		Integer permission = (Integer) getSession(Const.SESSION_ADMIN_PERMISSION);
+		setAttribute("permission", permission);
+		setAttribute("voList", voList);
+		setAttribute("seckill", seckill);
+
+		return "detail";
+	}
+
+	/*
+	 * 审核通过
+	 */
+	public String approve() {
+
+		// 通过审核,改变状态
+		SeckillProduct seckillProduct = seckillProductService.get(id);
+		seckillProduct.setStat(1);
+		seckillProduct.setAuditTime(new Date().getTime());
+		seckillProductService.update(seckillProduct);
+
+		JSONArray ary = JSONArray
+				.fromObject(seckillProduct.getSubProductJson());
+		JSONObject obj = null;
+		JSONObject promotionJson = new JSONObject();
+		SubProduct sub = null;
+		double seckillBottomPrice = 0;
+		double price = 0;
+		int seckillNum = 0;
+		// 设置具体商品的抢购数量以及价格
+		for (int i = 0; i < ary.size(); i++) {
+			obj = ary.getJSONObject(i);
+			sub = subProductService.get(obj.getInt("id"));
+			sub.setSeckillNum(isEmpty(obj.get("seckillNum")) ? 0 : obj
+					.getInt("seckillNum"));
+			seckillNum += sub.getSeckillNum();
+			if (seckillProduct.getProductType() == 2) {
+				price = isEmpty(obj.get("seckillPrice")) ? 0 : obj
+						.getDouble("seckillPrice");
+				// 循环比较得出最低的抢购价
+				if (i == 0 || (price < seckillBottomPrice)) {
+					seckillBottomPrice = price;
+				}
+				sub.setSeckillPrice(seckillBottomPrice);
+			}
+
+			subProductService.update(sub);
+			promotionJson.put(sub.getId(), sub.getSeckillNum());
+		}
+
+		// 设置该商品抢购的时间段,邮费等
+		Product product = productService.get(seckillProduct.getProductid());
+		product.setBeginTime(seckillProduct.getBeginTime());
+		product.setEndTime(seckillProduct.getEndTime());
+		product.setProductType(seckillProduct.getProductType());
+		product.setPostage(seckillProduct.getPostage());
+		product.setSeckillBottomPrice(seckillBottomPrice);
+		product.setSeckillnum(seckillNum);
+		product.setPromotionsjson(promotionJson.toString());
+		product.setProlimintnum(seckillProduct.getNum());
+		productService.update(product);
+		return ajaxJsonSuccessMessage("seckill!auditList.action");
+	}
+
+	/*
+	 * 审核不通过
+	 */
+	public String refuse() {
+
+		// 不通过审核,改变状态,说明原因
+		SeckillProduct seckillProduct = seckillProductService.get(id);
+		seckillProduct.setStat(-1);
+		seckillProduct.setRejectReason(rejectReason);
+		seckillProduct.setAuditTime(new Date().getTime());
+		seckillProductService.update(seckillProduct);
+
+		Product product = productService.get(seckillProduct.getProductid());
+		product.setProductType(0);
+		productService.update(product);
+
+		return ajaxJsonSuccessMessage("seckill!auditList.action");
+	}
+
+	/*
+	 * 审核通过后取消
+	 */
+	public String cancel() {
+
+		// 改变状态,说明原因
+		SeckillProduct seckillProduct = seckillProductService.get(id);
+		Product product = productService.get(seckillProduct.getProductid());
+		if (!productService.checkProductStatus(product)) {
+			return ajaxJsonErrorMessage("促销已结束..");
+		}
+
+		seckillProduct.setStat(2);
+		seckillProduct.setCancelReason(cancelReason);
+		seckillProduct.setCancelTime(new Date().getTime());
+		seckillProductService.update(seckillProduct);
+
+		// 初始化Product
+		product.init();
+		productService.update(product);
+		// 初始化subProduct
+		List<SubProduct> subProductList = subProductService.getList(
+				new QueryParam().add("productid", product.getId())
+						.add("del", 0), 0, 0, null, null, false);
+		for (SubProduct subProduct : subProductList) {
+			subProduct.setSeckillNum(0);
+			subProduct.setSeckillPrice(0.0);
+			subProductService.update(subProduct);
+		}
+
+		return ajaxJsonSuccessMessage("seckill!auditList.action");
+	}
+
+	private boolean isEmpty(Object obj) {
+		if (obj == null || "".equals(obj)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public Integer getCid() {
+		return cid;
+	}
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+
+	public String getSubProductJson() {
+		return subProductJson;
+	}
+
+	public void setSubProductJson(String subProductJson) {
+		this.subProductJson = subProductJson;
+	}
+
+	public Integer getProductType() {
+		return productType;
+	}
+
+	public void setProductType(Integer productType) {
+		this.productType = productType;
+	}
+
+	public String getBeginTime() {
+		return beginTime;
+	}
+
+	public void setBeginTime(String beginTime) {
+		this.beginTime = beginTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Double getPostage() {
+		return postage;
+	}
+
+	public void setPostage(Double postage) {
+		this.postage = postage;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getRejectReason() {
+		return rejectReason;
+	}
+
+	public void setRejectReason(String rejectReason) {
+		this.rejectReason = rejectReason;
+	}
+
+	public String getCancelReason() {
+		return cancelReason;
+	}
+
+	public void setCancelReason(String cancelReason) {
+		this.cancelReason = cancelReason;
+	}
+
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+}

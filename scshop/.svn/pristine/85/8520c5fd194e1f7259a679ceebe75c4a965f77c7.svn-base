@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>商品详情</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="fonts/iconfont.css">
+<link rel="stylesheet" href="css/myapp.css">
+
+</head>
+<body>
+	<div class="page">
+	  	<header class="bar bar-nav" id="second-bar">
+		    <a class="button button-link button-nav pull-left" href="#" data-transition='slide-out'>
+		      	<span class="icon iconfont icon-xiangzuo2"></span>
+		    </a>
+	    	<h1 class="title">商品详情</h1>
+	    	<a class="button button-link button-nav pull-right" href="#" data-transition='slide-out'>
+		      	<span class="icon iconfont icon-shouye5"></span>
+		    </a>
+	  	</header>
+
+		<nav class="bar bar-tab" id="sp-d-car">
+			<div class="sp-d-menu">
+			  	<a class="tab-item external" href="#">
+				    <span class="icon iconfont icon-kefu1"></span>
+				    <span class="tab-label">客服</span>
+			  	</a>
+			  	<a class="tab-item external" href="shopping-cart.html">
+				    <span class="icon iconfont icon-xiaodian"></span>
+				    <span class="tab-label">店铺</span>
+			  	</a>
+			  	<a class="tab-item external" href="#">
+				    <span class="icon iconfont icon-gouwuche9"></span>
+				    <span class="tab-label">购物车</span>
+				    <span class="badge">2</span>
+			  	</a>
+		  	</div>
+		  	<div class="sp-d-addcar">
+		  		<a href="#" class="open-about">加入购物车</a>
+		  	</div>
+		</nav>
+
+	  	<div class="content padd-content">
+	  		<div class="sp-d-box1">
+		  		<div class="sp-d-img">
+		  			<img src="images/spsch.jpg" />
+		  		</div>
+		  		<div class="sp-d-cdcjbox">
+		  			<div class='nationality'>
+						<div class='guoqi'>
+							<img src="images/gq.jpg" />
+						</div>
+						<div class="guoji-name">日本</div>
+					</div>
+					<span class="sp-d-sj">由商家afsdf提供</span>
+		  		</div>
+		  		<h5 class="sp-d-tit">dddddddddddddddddddddddddddddddddddddddddddddddddddd</h5>
+		  		<div class="sp-d-price">&yen;&nbsp;<span>400.00</span></div>
+		  		<div class="sp-d-ckj">国内参考价&nbsp;&yen;&nbsp;800.00</div>
+		  	</div>
+
+		  	<div class="sp-d-box2">
+		  		<div class="sp-d-yhpjtit">
+		  			用户评价(26)<span class="hpl">好评&nbsp;98.0%</span>
+		  		</div>
+		  		<dl class="yhpj-box">
+		  			<dd class="yhpj-group">
+		  				<div class="yhpj-avatar">
+		  					<img src="images/2000.jpg" />
+		  				</div>
+		  				<div class="yhpj-cont">
+		  					<h5 class="yhpj-yhname">某某某某某</h5>
+		  					<p class="yhpj-lr">还不错还不错还不错还不错还不错还不错还不错还不错</p>
+		  					<div class="yhpj-oth">
+		  						<div class="yhpj-xingji" data-val='40'></div>
+		  						<span class="yhpj-time">2015-15-15</span>
+		  					</div>
+		  				</div>
+		  			</dd>
+		  			<dd class="yhpj-group">
+		  				<div class="yhpj-avatar">
+		  					<img src="images/2000.jpg" />
+		  				</div>
+		  				<div class="yhpj-cont">
+		  					<h5 class="yhpj-yhname">某某某某某</h5>
+		  					<p class="yhpj-lr">还不错还不错还不错还不错还不错还不错还不错还不错</p>
+		  					<div class="yhpj-oth">
+		  						<div class="yhpj-xingji" data-val='40'></div>
+		  						<span class="yhpj-time">2015-15-15</span>
+		  					</div>
+		  				</div>
+		  			</dd>
+		  			<dd class="yhpj-group">
+		  				<div class="yhpj-avatar">
+		  					<img src="images/2000.jpg" />
+		  				</div>
+		  				<div class="yhpj-cont">
+		  					<h5 class="yhpj-yhname">某某某某某</h5>
+		  					<p class="yhpj-lr">还不错还不错还不错还不错还不错还不错还不错还不错</p>
+		  					<div class="yhpj-oth">
+		  						<div class="yhpj-xingji" data-val='40'></div>
+		  						<span class="yhpj-time">2015-15-15</span>
+		  					</div>
+		  				</div>
+		  			</dd>
+		  		</dl>
+		  		<a href="#" class="more-yhpj">查看更多评论</a>
+		  	</div>
+
+		  	<div class="sp-d-box3">
+		  		<div class="buttons-tab wdjf-mingxi">
+				    <a href="#tab1" class="tab-link button">图文详情</a>
+				    <a href="#tab2" class="tab-link active button">基本参数</a>
+			  	</div>
+		  		<div class="tabs">
+			      	<div id="tab1" class="tab">
+				        图文详情图文详情图文详情图文详情图文详情图文详情图文详情图文详情图文详情
+			     	</div>
+			      	<div id="tab2" class="tab active cpcs">
+				        <table class="yhpj-cpcs">
+				        	<tbody>
+				        		<tr>
+				        			<td width="90px">国家:</td>
+				        			<td>日本</td>
+				        		</tr>
+				        		<tr>
+				        			<td width="90px">品牌:</td>
+				        			<td>Nice</td>
+				        		</tr>
+				        		<tr>
+				        			<td width="90px">计量单位:</td>
+				        			<td>包</td>
+				        		</tr>
+				        		<tr>
+				        			<td width="90px">重量:</td>
+				        			<td>210g</td>
+				        		</tr>
+				        		<tr>
+				        			<td width="90px">体积:</td>
+				        			<td>10</td>
+				        		</tr>
+				        	</tbody>
+				        </table>
+			      	</div>
+			    </div>
+		  	</div>
+	  	</div>	  	
+	</div>
+
+	<div class="popup popup-about popupbox" data-toggle="scroller">
+	  	<div class="sp-d-popuparea">
+	  		<div class="sp-d-sninfo">
+	  			<div class="sp-d-sn-img">
+	  				<img src="images/wdjf.png" /> 
+	  			</div>
+	  			<div class="sp-d-sn-cont">
+	  				<p class="sp-d-sn-tit">体积体积体积体积体积体积体积体积体积体积体积体积体积体积体积体积体积体积体积</p>
+	  				<div class="sp-d-sn-price">&yen;&nbsp;<span>400.00</span></div>
+	  			</div>
+	  		</div>
+	  		<div class="sp-d-p-group">
+	  			<h5 class="sp-d-p-class">码数</h5>
+	  			<dl class="sp-d-p-condition">
+	  				<dd class="condition-list active">
+	  					<span class="num">xxl</span>
+	  					<span class="tag">秒杀中</span>
+	  				</dd>
+	  				<dd class="condition-list">
+	  					<span class="num">xxl</span>
+	  					<span class="tag">秒杀中</span>
+	  				</dd>
+	  				<dd class="condition-list">
+	  					<span class="num">xxl</span>
+	  					<span class="tag">秒杀中</span>
+	  				</dd>
+	  				<dd class="condition-list">
+	  					<span class="num">xxl</span>
+	  					<span class="tag">秒杀中</span>
+	  				</dd>
+	  				<dd class="condition-list">
+	  					<span class="num">xxl</span>
+	  					<span class="tag">秒杀中</span>
+	  				</dd>
+	  			</dl>
+	  		</div>
+	  		<div class="sp-d-p-group">
+	  			<h5 class="sp-d-p-class">数量</h5>
+	  			<div class="sp-d-spinner">
+	  				<div id="d1" class="Spinner"></div>
+	  			</div>
+	  		</div>
+	  		<div class="sp-d-p-addbtn">
+	  			<a href="#">加入购物车</a>
+	  		</div>
+
+	  		<a class="close-popup sp-d-p-close" href="#"><i class="iconfont icon-close"></i></a>
+	  	</div>
+	</div>
+	
+	<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm-extend.min.js' charset='utf-8'></script>   
+    <script type="text/javascript" src="js/xingji.js"></script><!-- 星级事件 -->
+    <script type="text/javascript" src="js/jquery.Spinner.js"></script><!-- 加减事件 -->
+    <script type="text/javascript">
+    	$(function(){
+    		//星级方法
+            xingji('.yhpj-xingji');
+
+            //弹出条件选择
+            $(document).on('click','.open-about', function () {
+			  	$.popup('.popup-about');
+			  	$('.popup-overlay').addClass('close-popup');//点击透明层关闭,不是必须
+			});
+
+            //数量加减方法
+			$("#d1").Spinner(1,1,999);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+package com.wudianyi.wb.scshop.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "scshop_refund")
+public class Refund {
+	
+	public enum RefundStatus {
+		//申请中,(买家)退货中,拒绝,成功
+		apply,returning,refuse,success
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private int userid;
+	private String orderid;//订单号
+	private Integer shopid;//商铺ID
+	@Column(name = "createdate")
+	private Long createDate;//退款申请时间
+	private double total;//退款金额
+	private String reason;//退款理由
+	@Column(name = "refundtype")
+	private int refundType;//退款类型 0为无需退货 1为需要退货
+	@Column(name = "refundway")
+	private int refundWay;//退款途径  0为微信钱包 1为银行卡
+	@Column(name = "refundstatus")
+	private RefundStatus refundStatus;
+	@Column(name = "refusereason")
+	private String refuseReason;//拒绝的理由
+	private int operator;//操作人
+	@Column(name = "realname")
+	private String realName;//真实姓名
+	@Column(name = "wxaccount")
+	private String wxAccount;//微信账号
+	private String phone;//手机号码
+	@Column(name = "cardinfo")
+	private String cardInfo;//银行卡信息
+	private Integer bankcardid;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public String getOrderid() {
+		return orderid;
+	}
+	public void setOrderid(String orderid) {
+		this.orderid = orderid;
+	}
+	public double getTotal() {
+		return total;
+	}
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	public String getReason() {
+		return reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	public int getRefundType() {
+		return refundType;
+	}
+	public void setRefundType(int refundType) {
+		this.refundType = refundType;
+	}
+	public int getRefundWay() {
+		return refundWay;
+	}
+	public void setRefundWay(int refundWay) {
+		this.refundWay = refundWay;
+	}
+	public RefundStatus getRefundStatus() {
+		return refundStatus;
+	}
+	public void setRefundStatus(RefundStatus refundStatus) {
+		this.refundStatus = refundStatus;
+	}
+	public String getRefuseReason() {
+		return refuseReason;
+	}
+	public void setRefuseReason(String refuseReason) {
+		this.refuseReason = refuseReason;
+	}
+	public int getOperator() {
+		return operator;
+	}
+	public void setOperator(int operator) {
+		this.operator = operator;
+	}
+	public String getRealName() {
+		return realName;
+	}
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
+	public String getWxAccount() {
+		return wxAccount;
+	}
+	public void setWxAccount(String wxAccount) {
+		this.wxAccount = wxAccount;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getCardInfo() {
+		return cardInfo;
+	}
+	public void setCardInfo(String cardInfo) {
+		this.cardInfo = cardInfo;
+	}
+	public Integer getBankcardid() {
+		return bankcardid;
+	}
+	public void setBankcardid(Integer bankcardid) {
+		this.bankcardid = bankcardid;
+	}
+	public Long getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Long createDate) {
+		this.createDate = createDate;
+	}
+	public Integer getShopid() {
+		return shopid;
+	}
+	public void setShopid(Integer shopid) {
+		this.shopid = shopid;
+	}
+	
+
+	
+
+
+
+
+}

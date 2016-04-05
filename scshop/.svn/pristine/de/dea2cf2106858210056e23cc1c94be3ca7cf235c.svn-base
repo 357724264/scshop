@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>确认订单</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="fonts/iconfont.css">
+<link rel="stylesheet" href="css/myapp.css">
+
+</head>
+<body>
+	<div class="page">
+	  	<header class="bar bar-nav" id="second-bar">
+		    <a class="button button-link button-nav pull-left" href="#" data-transition='slide-out'>
+		      	<span class="icon iconfont icon-xiangzuo2"></span>
+		    </a>
+	    	<h1 class="title">确认订单</h1>
+	  	</header>
+
+	  	<nav class="bar bar-tab" id="shop-cartnav">
+			<div class="shop-jiesuanobox p-o-js">
+				<div class="shop-price-total">
+					实付款&nbsp;:&nbsp;<span>&yen;&nbsp;6888.21</span>
+				</div>
+				<a href="#" class="shop-settleaccounts">去结算</a>
+			</div>
+		</nav>
+
+	  	<div class="content padd-content">
+	  		<div class="qrdd-addrbox">
+	  			<a href="#">
+	  				<div class="qrdd-addrcont">
+	  					<span class="qrdd-addr-mr">【默认】</span>广东省深圳市龙华新区亿康商务大厦5218<br/>某某某 18888888888
+	  				</div>
+	  				<div class="qrdd-jt"><i class="iconfont icon-xiangyou1"></i></div>
+	  			</a>
+	  		</div>
+
+	  		<div class="qrdd-odrbox">
+	  			<div class="qrdd-dpame">nice专卖店</div>
+	  			<dl class="qrdd-pro-box">
+	  				<dd class='qrdd-prolist'>
+	  					<div class="qrdd-proimg">
+	  						<img src="images/wdjf.png" />
+	  					</div>
+	  					<div class="qrdd-procont">
+	  						<h5 class="qrdd-proname">若干葳七人且若干葳七人且若干葳七人且</h5>
+	  						<div class="qrdd-proprice">&yen;&nbsp;400.00</div>
+	  						<div>x1</div>
+	  					</div>
+	  				</dd>
+	  				<dd class='qrdd-prolist'>
+	  					<div class="qrdd-proimg">
+	  						<img src="images/wdjf.png" />
+	  					</div>
+	  					<div class="qrdd-procont">
+	  						<h5 class="qrdd-proname">若干葳七人且若干葳七人且若干葳七人且</h5>
+	  						<div class="qrdd-proprice">&yen;&nbsp;400.00</div>
+	  						<div>x1</div>
+	  					</div>
+	  				</dd>
+	  			</dl>
+	  		</div>
+
+	  		<div class="po-mjlybox">
+	  			<a href="#" class="open-about">
+		  			<span class="pm-tit">买家留言</span>
+		  			<div class="pm-cont">买家留言买家留言买家留言买家留言买家留言买家留言买家留言买家留言</div>
+		  			<div class='pm-jt'>
+		  				<i class="iconfont icon-xiangyou1"></i>
+		  			</div>
+		  		</a>
+	  		</div>
+
+	  		<div class="p-yhbox">
+	  			<div class='p-yh-list'>
+	  				<label><!-- class="clicked" -->
+		  				<div class="p-yh-icon">
+		  					<i class="iconfont icon-wodeqiajuan"></i>
+		  				</div>
+		  				<div class="p-yh-cont">
+		  					<h5 class="p-yh-c-tit">使用优惠卷</h5>
+		  					<span class="p-yh-c-smal">可用优惠卷1张</span>
+		  				</div>
+		  				<p>
+		  					<input type="checkbox" class="p-yh-ipt yhjipt" />
+		  					<i class="iconfont icon-duigou yhicon"></i>
+	  					</p>
+		  			</label>
+	  			</div>
+	  			<div class='p-yh-list'>
+	  				<label>
+		  				<div class="p-yh-icon p-yh-jficon">
+		  					<i class="iconfont icon-jifen5"></i>
+		  				</div>
+		  				<div class="p-yh-cont">
+		  					<h5 class="p-yh-c-tit">使用积分</h5>
+		  					<span class="p-yh-c-smal">可用积分20,抵扣&yen;&nbsp;0.30</span>
+		  				</div>
+		  				<p>
+			  				<input type="checkbox" checked="checked" class="p-yh-ipt" />
+		  					<i class="iconfont icon-duigou yhicon"></i>
+		  				</p>
+		  			</label>
+	  			</div>
+	  		</div>
+
+	  		<div class="p-zfwaybox">
+	  			<h5 class="p-zfw-tit">选择支付方式</h5>
+	  			<div class="p-zfwlist">
+	  				<label>
+	  					<i class="iconfont icon-weixin"></i>&nbsp;&nbsp;&nbsp;微信支付
+	  					<div class="p-zfwcheck">
+	  						<input name="zffs" type="radio" checked="checked" />
+	  						<i class="iconfont icon-duigou"></i>
+	  					</div>
+	  				</label>
+	  			</div>
+	  			<div class="p-zfwlist">
+	  				<label>
+	  					<i class="iconfont icon-zhifubao2"></i>&nbsp;&nbsp;&nbsp;支付宝
+	  					<div class="p-zfwcheck">
+	  						<input name="zffs" type="radio" />
+	  						<i class="iconfont icon-duigou"></i>
+	  					</div>
+	  				</label>
+	  			</div>
+	  			<div class="p-zfwlist">
+	  				<label>
+	  					<i class="p-zfyl"></i>&nbsp;&nbsp;&nbsp;银联支付
+	  					<div class="p-zfwcheck">
+	  						<input name="zffs" type="radio" />
+	  						<i class="iconfont icon-duigou"></i>
+	  					</div>
+	  				</label>
+	  			</div>
+	  		</div>
+	  	</div>	  	
+	</div>
+
+	<div class="yhj-xzbox">
+		<div class="yhj-xzarea">
+			<h3 class="box-tit">选择优惠劵</h3>
+			<label class="yhj-xz-lb">
+				<strong>&yen;10</strong>
+				<div class="yhj-xz-sysm">
+					<span>新用户注册10元劵</span>
+					<span>有效期:2015.6.4-2015.6.5</span>
+				</div>
+				<input type="radio" name="yhjxz" class="yhjxzinpt">
+				<i class="iconfont icon-duigou xzicon"></i>
+			</label>
+			<label class="yhj-xz-lb">
+				<strong>&yen;10</strong>
+				<div class="yhj-xz-sysm">
+					<span>新用户注册10元劵</span>
+					<span>有效期:2015.6.4-2015.6.5</span>
+				</div>
+				<input type="radio" name="yhjxz" class="yhjxzinpt">
+				<i class="iconfont icon-duigou xzicon"></i>
+			</label>
+			<div class="xzbtnbox">
+				<a href="#" class="cancelbtn">取消</a>
+				<a href="#">确定</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup popup-about popupbox" data-toggle="scroller">
+	  	<div class="sp-d-popuparea">
+	  		<div class="p-o-sjlr">
+	  			<textarea id="mjly-text"></textarea>
+	  		</div>
+
+	  		<a class="close-popup sp-d-p-close" href="#"><i class="iconfont icon-close"></i></a>
+	  	</div>
+	</div>
+	
+	<div class="popup-overlay close-popup"></div>
+
+	<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript">
+    	//弹出条件选择
+            $(document).on('click','.open-about', function () {
+			  	$.popup('.popup-about');
+			  	$('.popup-overlay').addClass('close-popup');//点击透明层关闭,不是必须
+			});
+
+			$(document).on('change','#mjly-text',function(){
+				var text=$('#mjly-text').val();
+				$('.pm-cont').html(text);
+			})
+
+			$(document).on('click','.yhjipt',function(){
+				var _this=$(this);
+				if(_this.is(':checked')){
+					$('.yhj-xzbox').css({display:'block'});
+					$('.popup-overlay').addClass('modal-overlay-visible');
+				}else{
+					$('.yhj-xzbox').css({display:'none'});
+					$('.popup-overlay').removeClass('modal-overlay-visible');
+				}
+			})
+			$(document).on('click','.cancelbtn',function(){
+				$('.yhjipt').prop('checked',false);
+				$('.yhj-xzbox').css({display:'none'});
+				$('.popup-overlay').removeClass('modal-overlay-visible');
+			})
+    </script>  
+</body>
+</html>

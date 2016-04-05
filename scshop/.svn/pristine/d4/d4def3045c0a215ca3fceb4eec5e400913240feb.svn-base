@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content=""> <!-- seo网站关键字 -->
+	<meta name="description" content=""> <!-- seo对网站的文字描述 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<!-- IE使用最新渲染模式，chrome框架使用webkit内核 -->
+	<meta name='renderer' content="webkit">
+	<!-- 让360浏览器使用webkit内核 -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!-- 让屏幕1：1缩放，并且在移动设备上禁止放大缩小 -->
+
+	<!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->    
+    <link rel="stylesheet" type="text/css" href="${base}/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${base}/static/css/agency1.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class='logo-area'>
+				<img src="images/agency-logo.png" alt="你会中" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class='row scshopshzcbox'>
+					<form class="form-horizontal">
+					  	<div class="form-group">
+						    <label for="inputEmail3" class="col-sm-2 control-label">手机号码</label>
+						    <div class="col-sm-5">
+						      	<input type="email" class="form-control" id="inputEmail3" placeholder="手机号码">
+						      	<span class="errors"></span>
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">手机号码</label>
+						    <div class="col-sm-5">
+						      	<input type="password" class="form-control" id="inputPassword3" placeholder="手机号码">
+						      	<span class="errors"></span>
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">号码</label>
+						    <div class="col-sm-5">
+						      	<input type="password" class="form-control" id="inputPassword3" placeholder="手机号码">
+						      	<span class="errors"></span>
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">手机号码</label>
+						    <div class="col-sm-5">
+						      	<input type="password" class="form-control" id="inputPassword3" placeholder="手机号码">
+						      	<span class="errors"></span>
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="inputPassword3" class="col-sm-2 control-label">手机号码</label>
+						    <div class="col-sm-5">
+						      	<input type="password" class="form-control" id="inputPassword3" placeholder="手机号码">
+						      	<span class="errors"></span>
+						    </div>
+					  	</div>
+					  	
+					</form>
+				</div>
+
+				<dl class="zjzarea">
+					<dt class="zjztit">身份证</dt>
+					<dd class="zhengjiangroup">
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+					</dd>
+					<dt class="zjztit">身份证</dt>
+					<dd class="zhengjiangroup">
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+						<div class="zjzlist">
+							<div class="cover">
+								<div class="coverbox">
+									<input class="zjzfileinput" type="file" />
+									<img class="zjzimg" src="images/shop1.png">
+								</div>								
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="col-sm-offset-3 col-sm-6 zjzbtnbox">
+			<button type="button" id="register-btn">立即注册</button>
+		</div>
+		<div class="col-sm-12">
+			<h5 class="text-center">珠海元会科技有限公司</h5>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript" src="${base}/static/js/bootstrap.min.js"></script>
+</body>
+</html>

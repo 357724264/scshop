@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>用户注册</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="fonts/iconfont.css">
+<link rel="stylesheet" href="css/myapp.css">
+</head>
+<body>
+	<div class="page">
+	  	<header class="bar bar-nav" id="second-bar">
+		    <a class="button button-link button-nav pull-left" href="#" data-transition='slide-out'>
+		      	<span class="icon iconfont icon-xiangzuo2"></span>
+		    </a>
+	    	<h1 class="title">用户注册</h1>
+	  	</header>
+
+	  	<div class="content padd-content">
+	  		<div class="registerbox">
+	  			<div class="regist-group">
+	  				<input type="text" class="regist-ipt" autocapitalize="off" autocomplete="off" spellcheck="true" placeholder="请输入手机号码" />
+	  			</div>
+	  			<div class="regist-group">
+	  				<input type="number" class="regist-ipt" oninput="checkTextLength(this,6)" placeholder="请输入验证码" autocapitalize="off" autocomplete="off" spellcheck="true" />
+	  				<input type="button" id="identifying-btn" onclick="sendMessage()" value="获取验证码" />
+	  			</div>
+	  			<div class="regist-group">
+	  				<input type="text" class="regist-ipt" autocapitalize="off" autocomplete="off" spellcheck="true" placeholder="请设置密码" />
+	  			</div>
+	  			<div class="regist-group">
+	  				<input type="text" class="regist-ipt" autocapitalize="off" autocomplete="off" spellcheck="true" placeholder="再次确认密码" />
+	  			</div>
+	  		</div>
+
+	  		<div class="defaultbtnbox">
+	  			<button type="button" class="defaultbtn">注册</button>
+	  			<label class="yhxjcheck">
+	  				<input type="checkbox" class="checkbtn" /><i class='iconfont icon-duigou'></i>&nbsp;已阅读并同意<a href="#" class="yhxy">《用户协议》</a>
+	  			</label>
+	  		</div>
+	  	</div>
+	</div>
+
+	<div class="popbox">
+		<a href='#' class="close-pop">&#10005;</a>	
+		<div class="content-inner cont-inner" id="cont-inner">			
+			<div class="cont-area">				
+				你会中玩法介绍：<br>       
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你会中，是一个全新的1元抽奖消费众筹，全额返还未中奖金额的福利创造平台。开奖规则为，奖品分为若干份，1元可认购1份，同时获得一个幸运号码，份额全部认购完，进入开奖时间，谁的号码最接近最新一期时时彩（一种国家彩票，看ps.）的号码，为中奖号码，将获得本期奖品参与金额不返还；未中奖参与金额，平台将全额返还至个人预付购物卡，可用于商城购物消费，100%不亏！（商城暂缺的商品可以提交意愿，商城安排采购。）<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你会中，是一个全新的1元抽奖消费众筹，全额返还未中奖金额的福利创造平台。开奖规则为，奖品分为若干份，1元可认购1份，同时获得一个幸运号码，份额全部认购完，进入开奖时间，谁的号码最接近最新一期时时彩（一种国家彩票，看ps.）的号码，为中奖号码，将获得本期奖品参与金额不返还；未中奖参与金额，平台将全额返还至个人预付购物卡，可用于商城购物消费，100%不亏！（商城暂缺的商品可以提交意愿，商城安排采购。）<br>
+      		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ps：重庆时时彩是一种经中国国家财政部批准，重庆市福利彩票发行中心承销的福彩快开彩票，2元1注；开奖频率为白天10分钟一次，夜场5分钟一次；为体现公平性，中奖号码采用开奖时间截止后最新一期时时彩票号码为干扰数据，谁也无法知道没开奖的号码数据，所以公平公正。
+			</div>
+		</div>
+	</div>
+	<div class="modal-overlay"></div>
+
+	<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.5.7/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/send-identifyingcode.js"></script>  <!-- 间隔时间发送验证码 -->
+
+    <!-- 控制验证码只能输入6位数 -->
+    <script type="text/javascript">
+    	function checkTextLength(obj, length){      
+           if(obj.value.length > length){                
+               obj.value = obj.value.substr(0, length);   
+           }   
+		}
+		$(function(){
+			$(document).on('click','.yhxy',function(){
+	    		$('.modal-overlay').addClass('modal-overlay-visible');
+	    		$(document.body).css({'overflow':'hidden'});
+	    		$('.popbox').addClass('popblock');	
+	    	})
+	    	$(document).on('click','.close-pop',function(){
+	    		$('.popbox').removeClass('popblock');
+	    		$('.modal-overlay').removeClass('modal-overlay-visible');
+	    		$(document.body).css({'overflow':''});	    			
+	    	})
+		})
+    </script>
+    <!-- 控制验证码只能输入6位数 -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">
+*{
+margin: 0;
+padding: 0;
+}
+#wrap{
+margin-left: 100px;
+}
+#wrap li{
+display: inline-block;
+*display: inline;
+zoom:1;
+vertical-align: middle;
+}
+</style>
+<script type="text/javascript" src='seed.js'></script>
+</head>
+<body>
+<div id='wrap' ms-controller='duplex'>
+<p><input type='checkbox' data-duplex-changed="select_all_cb" ms-duplex-checked='select_all'>全选</p>
+<ul>
+<li ms-repeat='list'>
+<input type='checkbox' ms-duplex-number="selected" ms-attr-value='el.id'>{{el.text}}
+</li>
+</ul>
+<p>选中项的id:{{selected}}</p>
+</div>
+<script type="text/javascript">
+require('avalon',function(avalon){
+var duplex=avalon.define('duplex',function(vm){
+vm.selected=[];//保存勾选的选项的id,方便传给后台
+vm.list=[{id:1,text:'aaa'},{id:2,text:'bbb'},{id:3,text:'ccc'},{id:4,text:'ddd'},{id:5,text:'eee'},{id:6,text:'fff'}];
+vm.select_all_cb=function(){//全选框change事件回调
+var list=duplex.list,selected=duplex.selected;
+if(this.checked){
+avalon.each(list,function(i,v){//循环保存着已经勾选选框的数据
+selected.ensure(v['id']);//如果里面没有当前选框的数据，就保存
+});
+}else
+selected.clear();//清空
+};
+vm.select_all=0;
+});
+duplex.selected.$watch('length',function(after){//监听保存数据数组的变化
+var len=duplex.list.length;
+if(after==len)//子选框全部被勾选
+duplex.select_all=1;
+else//子选框有一个没有被勾选
+duplex.select_all=0;
+});
+avalon.scan();
+});
+</script>
+</body>
+</html>

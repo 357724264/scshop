@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>秒杀专场</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 避免IE使用兼容模式，IE 运行最新的渲染模式,用 Chrome 框架的页面用webkit 内核-->
+	<meta name="renderer" content="webkit">
+	<!-- 启用360浏览器的极速模式(webkit) -->
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<!-- 初始化移动浏览显示,移动端必须使用 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="imagemode" content="force">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- 危险勿动 -->
+    <script type="text/javascript">
+	!function(n){var e=n.document,t=e.documentElement,i=1080,d=i/150,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>1080&&(n=1080),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../basestyle/stylesheets/mycoupon.css">
+	<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+</head>
+
+<body class="ms-padd">
+	<div class="content">
+		<header class="shops-head">
+			<a href="#" class="head-left"><i class="iconfont icon-xiangzuo1"></i></a>
+			<div class="head-tit">				
+				秒杀专场
+			</div>
+			<a href="#" class="head-right"><i class="iconfont icon-fenleisousuo"></i></a>
+		</header>
+
+		<div class="fltabs">
+			<a href="#" class="tab-link active">现场</a>
+			<a href="#" class="tab-link">预告</a>
+		</div>
+
+		<dl class="msbox">
+			<dd>
+				<a href="#">
+					<div class="ms-img">
+						<img src="../images/pro.png"> <!-- 170*170 -->
+					</div>
+					<div class="ms-cont">
+						<div class="ms-gj">
+							<img src="../images/gq.png">
+							<span>澳大利亚</span>
+						</div>
+						<h3 class="ms-sp-tit">澳大利亚澳大利亚澳大利亚</h3>
+						<p class="ms-price">&yen;&nbsp;<strong>400.00</strong><span>国内参考价:&yen;800.00</span></p>
+						<div class="ms-djs countdown" data-start='2016-1-15 15:22:23' data-end='2016-1-16 20:46'></div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="#">
+					<div class="ms-img">
+						<img src="../images/pro.png"> <!-- 170*170 -->
+					</div>
+					<div class="ms-cont">
+						<div class="ms-gj">
+							<img src="../images/gq.png">
+							<span>澳大利亚</span>
+						</div>
+						<h3 class="ms-sp-tit">澳大利亚澳大利亚澳大利亚</h3>
+						<p class="ms-price">&yen;&nbsp;<strong>400.00</strong><span>国内参考价:&yen;800.00</span></p>
+						<div class="ms-djs countdown" data-start='2016-1-15 17:00:05' data-end='2016-1-17 20:46:55'></div>
+					</div>
+				</a>
+			</dd>
+			<dd>
+				<a href="#">
+					<div class="ms-img">
+						<img src="../images/pro.png"> <!-- 170*170 -->
+					</div>
+					<div class="ms-cont">
+						<div class="ms-gj">
+							<img src="../images/gq.png">
+							<span>澳大利亚</span>
+						</div>
+						<h3 class="ms-sp-tit">澳大利亚澳大利亚澳大利亚</h3>
+						<p class="ms-price">&yen;&nbsp;<strong>400.00</strong><span>国内参考价:&yen;800.00</span></p>
+						<div class="ms-djs countdown" data-start='2016-1-15 17:02:08' data-end='2016-1-18 20:46'></div>
+					</div>
+				</a>
+			</dd>
+		</dl>
+	</div>
+
+	<script type="text/javascript" src='../js/jquery.countdown.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.countdown').countdown();
+		})
+	</script>
+</body>
+</html>

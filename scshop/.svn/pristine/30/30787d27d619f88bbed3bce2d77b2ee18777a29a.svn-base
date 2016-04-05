@@ -1,0 +1,375 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "variables","mixins","compass/reset";
+
+*{
+    box-sizing:border-box;
+}
+body{
+    font-size: $fontSize;
+    color: $bodycolor;
+    background-color:$bodyback;
+    font-family:$mainline-ff;
+}
+a{
+    color:$bodycolor;
+    text-decoration:none;
+}
+.content{
+	width:100%;
+}
+
+$header-height:.86rem;
+$header-lineheight:.64rem;
+$bottom-height:1rem;
+header{
+	width:100%;
+	height:.86rem;
+	background-color:$ele-backcolor;
+	color:#fff;
+	padding:.11rem;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:9;
+
+	.logo{
+		width:1.2rem;
+		height:$header-lineheight;
+		display:inline-block;
+		text-align:center;
+		position:relative;
+		z-index:2;
+
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+	.flss-box{
+		position:absolute;
+		top:.11rem;
+		left:1.4rem;
+		bottom:.11rem;
+		right:.8rem;
+		line-height:$header-lineheight;
+		background-color:#c01112;
+		border-radius:.02rem;
+		color:#fff;
+
+		i{
+			font-size:.4rem;
+			padding-left:.1rem;
+		}
+	}
+	.ssbtn{
+		width:.7rem;
+		height:$header-lineheight;
+		line-height:$header-lineheight;
+		text-align:center;
+		display:inline-block;
+		float:right;
+		color:#fff;
+
+		i{
+			font-size:.5rem;
+		}
+	}
+}
+
+$fltabs-height:.74rem;
+.fltabs{
+	width:100%;
+	height:.74rem;
+	line-height:.74rem;
+	text-align:center;
+	background-color:#fff;
+	position:fixed;
+	top:$header-height;
+	left:0;
+	z-index:9;
+	@include flexbox();
+
+	.tab-link{
+		@include boxflex();
+		width:100%;
+		display:block;
+		text-align:center;
+		position:relative;
+		font-size:$ele-size13;
+
+		&:after{
+			@include lineafter-bottom;
+		}
+		&.active:after{
+			@include lineafter-bottom2(3px);
+		}
+	}
+}
+
+.tab{
+	display:none;
+}
+.tab.active{
+	display:block;
+}
+
+$flbox-width:1.6rem;
+.flbox{
+	width:100%;
+	position:relative;	
+}
+.yscroll1{
+	position:fixed;
+	width:$flbox-width;
+	top:$header-height+$fltabs-height;
+	left:0;
+	bottom:$bottom-height;
+	background-color:$bodyback;
+	z-index:8;
+	
+
+	.flscroll{
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow-y:auto;
+	}
+	.lbbox{
+		width:100%;
+
+		li{
+			width:100%;
+			height:.9rem;
+			line-height:.9rem;
+			font-size:$ele-size12;
+			text-align:center;
+			position:relative;
+
+			&:after{
+				@include lineafter-bottom();
+			}
+			&.active{
+				border-color:$ele-fontcolor;
+				color:$ele-fontcolor;
+				background-color:#fff;
+
+				&:after{
+					@include lineafter-left2(3px);
+				}
+			}
+		}
+	}
+}
+.flcont{
+	width:100%;
+	height:100%;
+	background-color:#fff;
+	padding-left:$flbox-width;
+	z-index:1;
+
+	.lbshopbox{
+		width:100%;
+		padding:$ele-padding;
+
+		dt{
+			height:.8rem;
+			line-height:.8rem;
+			position:relative;
+			text-align:center;
+			font-size:$ele-size16;
+
+			&:after{
+				content:'';
+			    position:absolute;
+			    left:0;
+			    bottom:.4rem;
+			    right:auto;
+			    top:auto;
+			    height:1px;
+			    width:100%;
+			    background-color:#ddd;
+			    display:block;
+			    z-index:2;
+			    -webkit-transform-origin:50% 100%;
+			    transform-origin:50% 100%;
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			    backface-visibility:hidden;
+			}
+			span{
+				background-color:#fff;
+				position:relative;
+				z-index:3;
+				display:inline-block;
+				padding:0 .08rem;
+			}
+		}
+		dd{
+			width:100%;
+			padding-right:.3rem;
+
+			&:after{
+				@include clearfix();
+			}
+
+			a{
+				position: relative;
+			    float:left;
+			    width:33.33%;
+			    height:1.97rem;
+			    margin:.1rem .15rem .1rem 0;
+			    font-size:.6rem;
+			    text-align:center;
+			    display:block;
+			    color:#333;
+
+			    &:nth-child(3n){
+			    	margin-right:-.3rem;
+			    }
+
+			    .cover{
+			    	height:1.67rem;
+
+				    img{
+				    	width:100%;
+				    	display:block;
+				    }
+			    }
+			    p{
+			    	margin:0;
+			    	margin-top:.03rem;
+			    	font-size:$ele-size12;
+			    }
+			}
+		}
+	}
+}
+
+.flppbox{
+	width:100%;
+	background-color:#fff;
+	padding:$ele-padding;
+
+	.pparea{
+		width:100%;
+
+		dt{
+			width:100%;
+			height:.4rem;
+			line-height:.4rem;
+			font-size:$ele-size15;
+			margin:.15rem 0;
+			padding-left:.16rem;
+			position:relative;
+
+			&:before{
+				content:'';
+			    position:absolute;
+			    left:0;
+			    bottom:0;
+			    right:auto;
+			    top:auto;
+			    height:100%;
+			    width:3px;
+			    background-color:#d71416;
+			    display:block;
+			    z-index:1;
+			    -webkit-transform-origin:50% 100%;
+			    transform-origin:50% 100%;
+			    -webkit-transform:scaleX(.5);
+			    transform:scaleX(.5);
+			    backface-visibility:hidden;
+			}
+		}
+		dd{
+			width:100%;
+			padding-right:.3rem;
+			position:relative;
+
+			&:after{
+				@include clearfix();
+			}
+			a{
+				width:25%;
+				height:1.41rem;
+				padding:.05rem;
+				margin:.1rem .1rem .1rem 0;
+				border:1px solid #ddd;
+				display:block;
+				position:relative;
+				float:left;
+
+				&:nth-child(4n){
+					margin-right:-.3rem;
+				}
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+		}
+	}
+}
+
+$navbar-height:1rem;
+.navbar{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:$navbar-height;
+	background-color:#f7f7f8;
+	z-index:99;
+
+	&:after{
+		@include lineafter-top();
+	}
+
+	.nav-list{
+		position:relative;
+    	display:table-cell;
+    	width:1%;
+    	height:$navbar-height;
+    	text-align:center;
+    	vertical-align:middle;
+
+    	&.active{
+    		color:$ele-fontcolor;
+    	}
+    	i{
+    		font-size:.4rem;
+    	}
+
+    	.tab-label{
+			display:block;
+	    	font-size:$ele-size12;
+	    	position:relative;
+	    	top:.05rem;
+		}
+		.badge{
+			position: absolute;
+		    top:.1rem;
+		    left:50%;
+		    z-index:100;
+		    height:.26rem;
+		    line-height:.26rem;
+		    min-width:.26rem;
+		    padding:0 .05rem;
+		    color:#fff;
+		    vertical-align:top;
+		    background: red;
+		    border-radius:.2rem;
+		    margin-left:.02rem;
+		}
+	}
+}
+.bdypadd{
+	padding-top:$header-height+$fltabs-height;
+	padding-bottom:$navbar-height;
+}

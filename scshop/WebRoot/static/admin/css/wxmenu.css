@@ -1,0 +1,662 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+.clear {
+	clear: both;
+}
+
+body,input,textarea,select,button {
+	font-size: 12px;
+}
+
+body,div,ul,li,dl,dt,dd,form,input,h1,h2,h3,h4,label,button,textarea,select,img
+	{
+	padding: 0;
+	margin: 0;
+	color: #222;
+	font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei",
+		"微软雅黑", "黑体", Arial, sans-serif;
+}
+
+.access_bright .main {
+	width: 800px;
+	margin: 10px auto;
+	min-height: 200px;
+	overflow: hidden;
+}
+
+.main_left {
+	float: left;
+	width: 320px;
+}
+
+.main_right {
+	display: table-cell;
+	vertical-align: top;
+	float: right;
+	width: 470px;
+}
+.main_right:after {
+	content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+	visibility: hidden;
+	clear: both;
+	height: 0!important;
+	display: block;
+	line-height: 0;
+}
+
+.ml_add {
+	display: block;
+	border: 2px dotted #d9dadc;
+	padding: 20px 0;
+	font-size: 0;
+	text-align: center;
+	margin: 20px 14px;
+	cursor: pointer;
+}
+
+.ml_add:hover {
+	border-color: #b3b3b3;
+}
+.ml_add:hover .ml_plus {
+	background: url("../img/imgs.png") 0 -2837px no-repeat;	
+}
+.ml_plus {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	overflow: hidden;
+	cursor: pointer;
+	background: url("../img/imgs.png") 0 -2761px no-repeat;
+}
+#img_tip{
+	color: #777;
+	font-size: 13px;
+}
+
+.icon18_common {
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 100px;
+	overflow: hidden;
+}
+.frm_label {
+	float: left;
+	width: 5em;
+	margin-top: .3em;
+	margin-right: 1em;
+	font-size: 14px;
+}
+.frm_input_box {
+	display: inline-block;
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	width: 278px;
+	font-size: 14px;
+	margin-top:10px;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+.frm_input, .frm_textarea {
+	width: 95%;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	background: #fff;
+}
+.frm_input:hover,.frm_input:focus,.frm_textarea:hover,.frm_textarea:focus{
+	border: 1px solid #f70;
+}
+.frm_input {
+	width: 340px;
+	border: 1px solid #ccc;
+	padding: 5px 8px;
+	font-size: 15px;
+	height: 24px;	
+}
+
+.appmsg {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+	border: 1px solid #e7e7eb;
+	background-color: #fff;
+	color: #8d8d8d
+}
+
+.appmsg_info {
+	font-size: 13px;
+	line-height: 20px;
+	padding-bottom: 10px
+}
+
+.appmsg_date {
+	font-weight: 400;
+	font-style: normal
+}
+
+.appmsg_content {
+	padding: 0 14px;
+	position: relative;
+	*zoom: 1
+}
+
+.appmsg_title {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	padding-top: 10px;
+	line-height: 28px;
+	max-height: 56px;
+	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.appmsg_title a {
+	display: block;
+	color: #8d8d8d
+}
+
+.appmsg_thumb_wrp {
+	height: 160px;
+	overflow: hidden
+}
+
+.appmsg_thumb {
+	width: 100%
+}
+
+.appmsg_desc {
+	padding: 5px 0 10px;
+	word-wrap: break-word;
+	word-break: break-all
+}
+
+.appmsg_opr {
+	background-color: #f4f4f4;
+	border-top: 1px solid #e7e7eb
+}
+
+.appmsg_opr ul {
+	overflow: hidden;
+	*zoom: 1
+}
+
+.appmsg_opr_item {
+	float: left;
+	line-height: 44px;
+	height: 44px
+}
+
+.appmsg_opr_item a {
+	display: block;
+	border-right: 1px solid #e7e7eb;
+	text-align: center;
+	text-decoration: none
+}
+
+.appmsg_opr_item a:hover {
+	text-decoration: none
+}
+
+.appmsg_opr_item a.no_extra {
+	border-right-width: 0
+}
+
+.appmsg_item {
+	*zoom: 1;
+	position: relative;
+	padding: 20px 14px;
+	border-top: 1px solid #e7e7eb
+}
+
+.appmsg_item:after {
+	content: "\200B";
+	display: block;
+	height: 0;
+	clear: both
+}
+
+.appmsg_item .appmsg_title {
+	line-height: 24px;
+	max-height: 48px;
+	overflow: hidden;
+	*zoom: 1;
+	margin-top: 14px
+}
+
+.appmsg_item .appmsg_thumb {
+	float: right;
+	width: 78px;
+	height: 78px;
+	margin-left: 14px
+}
+
+.multi .appmsg_info {
+	padding-top: 14px;
+	padding-left: 14px;
+	padding-right: 14px
+}
+
+.multi .appmsg_content {
+	padding: 0
+}
+
+.multi .appmsg_title {
+	font-size: 14px;
+	padding-top: 0
+}
+
+.cover_appmsg_item {
+	position: relative;
+	margin: 0 14px 14px
+}
+
+.cover_appmsg_item .appmsg_title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr='#99000000', endcolorstr=  '#99000000')
+}
+
+.cover_appmsg_item .appmsg_title a {
+	padding: 8px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 25px;
+}
+
+.appmsg_mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	filter: alpha(opacity = 60);
+	-moz-opacity: .6;
+	-khtml-opacity: .6;
+	opacity: .6;
+	z-index: 1
+}
+
+.appmsg .icon_card_selected {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -23px;
+	margin-left: -23px;
+	line-height: 999em;
+	overflow: hidden;
+	z-index: 1
+}
+
+.dialog_wrp .appmsg:hover {
+	cursor: pointer
+}
+
+.appmsg:hover .appmsg_mask {
+	display: block
+}
+
+.appmsg.selected .appmsg_mask {
+	display: block
+}
+
+.appmsg.selected .icon_card_selected {
+	display: inline-block
+}
+
+.appmsg_thumb.default {
+	display: block;
+	color: #c0c0c0;
+	text-align: center;
+	line-height: 160px;
+	font-weight: 400;
+	font-style: normal;
+	background-color: #ececec;
+	font-size: 16px
+}
+
+.appmsg_item .appmsg_thumb.default {
+	line-height: 78px;
+	font-size: 14px
+}
+
+.appmsg_edit_mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(229, 229, 229, 0.85) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr='#d9e5e5e5', endcolorstr=  '#d9e5e5e5');
+	text-align: center
+}
+
+.appmsg_item .appmsg_edit_mask {
+	line-height: 118px
+}
+
+.cover_appmsg_item .appmsg_edit_mask {
+	line-height: 160px
+}
+
+.appmsg_edit_mask a {
+	margin-left: 8px;
+	margin-right: 8px
+}
+
+.editing .cover_appmsg_item:hover .appmsg_edit_mask,.editing .appmsg_item:hover .appmsg_edit_mask
+	{
+	display: block
+}
+
+.editing .appmsg_thumb {
+	display: none
+}
+
+.editing .appmsg_thumb.default {
+	display: block
+}
+
+.editing .has_thumb .appmsg_thumb {
+	display: block
+}
+
+.editing .has_thumb .appmsg_thumb.default {
+	display: none
+}
+
+.editing .appmsg_content {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-bottom-width: 0
+}
+
+.editing.multi .appmsg_content {
+	border-bottom-width: 1px
+}
+
+.appmsg_add {
+	margin: 20px 14px
+}
+
+.tab_content .appmsg {
+	width: 320px
+}
+
+.appmsg_list {
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	font-size: 0;
+	margin: 0 30px;
+	letter-spacing: -4px
+}
+
+.appmsg_list:after {
+	display: inline-block;
+	width: 100%;
+	height: 0;
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	content: "."
+}
+
+.appmsg_list .tj_item {
+	font-size: 14px;
+	text-align: left;
+	text-justify: auto
+}
+
+.appmsg_col {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	width: 32%;
+	font-size: 14px;
+	text-align: left;
+	font-size: 14px;
+	letter-spacing: normal
+}
+
+.media_dialog.appmsg_list {
+	position: relative;
+	padding: 28px 140px;
+	height: 365px;
+	margin: 0;
+	overflow-y: scroll
+}
+
+.media_dialog .appmsg_col {
+	width: 48%
+}
+
+.vote_meta {
+	margin-top: 20px
+}
+
+.vote_meta:first-child {
+	margin-top: 0
+}
+
+.vote_meta.option_setting .vote_meta_title {
+	margin-bottom: 12px
+}
+
+.vote_meta_title {
+	margin-bottom: 6px;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px
+}
+
+.vote_meta_detail .frm_control_group {
+	padding-bottom: 20px
+}
+
+.vote_meta_detail.tips_wrp {
+	margin-top: -8px;
+	margin-left: 70px
+}
+
+.vote_meta_detail .frm_input_box.vote_title {
+	width: 335px
+}
+
+.vote_remove_link {
+	margin-left: .5em
+}
+
+.dialog_wrp.vote_edit .dialog_bd {
+	position: relative;
+	padding-top: 35px;
+	padding-bottom: 45px;
+	height: 450px;
+	overflow-y: scroll
+}
+
+.dialog_wrp.vote_edit .frm_label {
+	width: 4em
+}
+
+.page_appmsg_edit .tool_area {
+	clear: both;
+	margin: 0;
+	padding: 20px 0
+}
+
+.page_appmsg_edit .tool_bar {
+	margin-left: 0;
+	margin-right: 0
+}
+
+.page_appmsg_edit .appmsg {
+	min-height: 180px
+}
+
+.page_appmsg_edit .upload_preview img {
+	max-width: 100px;
+	max-height: 100px
+}
+
+.media_preview_area {
+	float: left;
+	width: 320px;
+	margin-right: 14px
+}
+
+.media_edit_area {
+	display: table-cell;
+	vertical-align: top;
+	float: none;
+	width: auto;
+	*display: block;
+	*zoom: 1
+}
+
+.media_edit_area:after {
+	content:
+		" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+	visibility: hidden;
+	clear: both;
+	height: 0 !important;
+	display: block;
+	line-height: 0
+}
+
+.edui_editor_wrp {
+	position: relative;
+	z-index: 0
+}
+
+.appmsg_edit_item {
+	padding-bottom: 1em
+}
+
+.editor_extra_info {
+	line-height: 30px;
+	margin-top: -30px;
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+.editor_extra_info a {
+	color: #222
+}
+
+.editor_extra_info a:hover {
+	color: #459ae9
+}
+
+.bianji{
+	margin-top: 72px;
+	*margin-top: 0;	
+}
+.icon18_common.edit_gray {
+	background: url("../img/imgs.png") 0 -5432px no-repeat;
+}
+
+.icon18_common.edit_gray:hover,a:hover .icon18_common.edit_gray {
+	background: url("../img/imgs.png") 0 -5460px no-repeat;
+}
+
+.icon18_common.del_gray {
+	background: url("../img/imgs.png") 0 -4788px no-repeat;
+}
+
+a:hover .icon18_common.del_gray,.icon18_common.del_gray:hover {
+	background: url("../img/imgs.png") 0 -4816px no-repeat;
+}
+
+.appmsg_editor {
+	position: relative;
+	padding-left: 12px;
+}
+.appmsg_editor .arrow_out {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-width: 12px;
+	border-style: dashed;
+	border-color: transparent;
+	border-left-width: 0;
+	border-right-color: #e7e7eb;
+	border-right-style: solid;
+	top: 44px;
+	left: 0;
+}
+.appmsg_editor .arrow_in {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-width: 12px;
+	border-style: dashed;
+	border-color: transparent;
+	border-left-width: 0;
+	border-right-color: #fff;
+	border-right-style: solid;
+	top: 44px;
+	left: 1px;
+}
+.appmsg_editor .inner {
+	padding: 20px;
+	border: 1px solid #e7e7eb;
+	background-color: #fff;
+	width: 357px;
+	min-height: 300px;
+}
+.appmsg_edit_item {
+	padding-bottom: 1em;
+}
+.appmsg_edit_item .frm_label {
+	display: block;
+	width: auto;
+	float: none;
+	margin-right: 0;
+	margin-bottom: 4px;
+}
+.appmsg_editor .arrow {
+	position: absolute;
+}
+.appmsg_edit_item .frm_input_box {
+	display: block;
+	width: auto;
+	height: auto;
+	min-height: 30px;
+	border-color: #e7e7eb;
+}

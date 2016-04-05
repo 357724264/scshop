@@ -1,0 +1,66 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-fangxiang:before { content: "\e600"; }
+.icon-guanbi:before { content: "\e601"; }
+.icon-guanbi1:before { content: "\e602"; }
+.icon-guanbi2:before { content: "\e603"; }
+.icon-add:before { content: "\e604"; }
+.icon-icon123:before { content: "\e605"; }
+.icon-guanbi3:before { content: "\e606"; }
+.icon-bianji:before { content: "\e607"; }
+.icon-bianji1:before { content: "\e608"; }
+.icon-shanchu:before { content: "\e609"; }
+.icon-123:before { content: "\e60a"; }
+.icon-zengjiazhibiao:before { content: "\e60b"; }
+.icon-shanchu1:before { content: "\e60c"; }
+.icon-add1:before { content: "\e60d"; }
+.icon-shan:before { content: "\e60e"; }
+.icon-zengjia:before { content: "\e60f"; }
+.icon-shanchu2:before { content: "\e610"; }
+.icon-bianji2:before { content: "\e611"; }
+.icon-shanchu3:before { content: "\e612"; }
+.icon-guanbi4:before { content: "\e613"; }
+.icon-guanbi5:before { content: "\e614"; }
+.icon-zengjia1:before { content: "\e615"; }
+.icon-bianji3:before { content: "\e616"; }
+.icon-xiangxiafanbai:before { content: "\e617"; }
+.icon-zengjia2:before { content: "\e618"; }
+.icon-xiangxiazuixin:before { content: "\e619"; }
+.icon-shanchu4:before { content: "\e61a"; }
+.icon-add2:before { content: "\e61b"; }
+.icon-xiangxiashouqi:before { content: "\e61c"; }
+.icon-shanchu5:before { content: "\e61d"; }
+.icon-zengjia_2:before { content: "\e61e"; }
+.icon-19zengjiaxindetian:before { content: "\e61f"; }
+.icon-close:before { content: "\e620"; }
+
+a{color:#333;}
+.pro-specarea{width:100%; padding-left:123px; box-sizing:border-box;}
+.pro-specbox{width:auto; background-color:#fff; border-collapse:collapse; border-spacing:0; margin-bottom:10px;}
+.pro-specbox tr td{width:115px; min-height:36px; font-size:14px; border:1px solid #c1c1c1; margin:0; padding:0; position:relative; box-sizing:border-box;}
+.pro-specbox tr td.oneadd{background-color:#ddd;}
+.pro-specbox tr td.oneadd a{display:block; width:100%; text-align:center; line-height:36px;}
+.pro-specbox tr td.oneadd a i{font-size:20px;}
+.pro-specbox tr td.twoadd{visibility:hidden;}
+.pro-specbox tr:first-child td{height:36px;}
+.pro-specbox tr:nth-child(2n+2) td{padding:0 5px 5px 5px; padding-bottom:34px;}
+.pro-specbox tr td .twoaddbtn{display:block; width:100%; height:34px; line-height:34px; text-align:center; background-color:#ddd; position:absolute; bottom:0; left:0;}
+
+.pro-specbox tr input{margin:0; padding:3px; padding-right:20px; width:100%; height:100%; border:0; box-sizing:border-box;}
+.pro-specbox .delall{position:absolute; top:0;right:0; width:20px; height:100%; line-height:34px; cursor:pointer; text-align:center; display:block; font-size:20px; background-color:#996666; color:#fff;}
+.pro-specbox .two-level{width:100%; height:34px; margin:5px 0; border:1px solid #c1c1c1; position:relative;}
+.pro-specbox .dellist{position:absolute; top:0;right:0; width:20px; height:100%; line-height:34px; cursor:pointer; text-align:center; display:block; font-size:20px; color:#996666;}

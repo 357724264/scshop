@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>选择银行卡</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 避免IE使用兼容模式，IE 运行最新的渲染模式,用 Chrome 框架的页面用webkit 内核-->
+	<meta name="renderer" content="webkit">
+	<!-- 启用360浏览器的极速模式(webkit) -->
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<!-- 初始化移动浏览显示,移动端必须使用 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="imagemode" content="force">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- 危险勿动 -->
+    <script type="text/javascript">
+	!function(n){var e=n.document,t=e.documentElement,i=1080,d=i/150,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>1080&&(n=1080),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../basestyle/stylesheets/mycoupon.css">
+	<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+</head>
+
+<body class="add-bankpadd">
+	<div class="content">
+		<header class="shops-head">
+			<a href="#" class="head-left"><i class="iconfont icon-xiangzuo1"></i></a>
+			<div class="head-tit">				
+				选择银行卡
+			</div>
+			<!-- <a href="#" class="head-right"><i class="iconfont icon-fenleisousuo"></i></a> -->
+		</header>
+
+		<dl class="bankbox">
+			<dd>
+				<div class="xzbank-head">
+					<div class="xzb-lb">
+						<label>
+							<input type="radio" name="bank">
+							<i class="iconfont icon-duigou"></i>默认银行卡
+						</label>
+					</div>
+					<div class="xzb-btnbox">
+						<a href="#" class="edit"><i class="iconfont icon-bianji3"></i>编辑</a>
+						<a href="#" class="delt"><i class="iconfont icon-shanchu1"></i>删除</a>
+					</div>
+				</div>
+				<div class="xzb-cont">
+					<p>
+						<span class="tit">持卡人&nbsp;:&nbsp;</span>
+						<span class="cont">持卡人</span>
+					</p>
+					<p>
+						<span class="tit">卡号&nbsp;:&nbsp;</span>
+						<span class="cont">555555555555555555555</span>
+					</p>
+					<p>
+						<span class="tit">卡类型&nbsp;:&nbsp;</span>
+						<span class="cont">农业银行 储蓄卡</span>
+					</p>
+					<p>
+						<span class="tit">手机号&nbsp;:&nbsp;</span>
+						<span class="cont">188888888888</span>
+					</p>
+				</div>
+			</dd>
+			<dd>
+				<div class="xzbank-head">
+					<div class="xzb-lb">
+						<label>
+							<input type="radio" name="bank">
+							<i class="iconfont icon-duigou"></i>默认银行卡
+						</label>
+					</div>
+					<div class="xzb-btnbox">
+						<a href="#" class="edit"><i class="iconfont icon-bianji3"></i>编辑</a>
+						<a href="#" class="delt"><i class="iconfont icon-shanchu1"></i>删除</a>
+					</div>
+				</div>
+				<div class="xzb-cont">
+					<p>
+						<span class="tit">持卡人&nbsp;:&nbsp;</span>
+						<span class="cont">持卡人</span>
+					</p>
+					<p>
+						<span class="tit">卡号&nbsp;:&nbsp;</span>
+						<span class="cont">555555555555555555555</span>
+					</p>
+					<p>
+						<span class="tit">卡类型&nbsp;:&nbsp;</span>
+						<span class="cont">农业银行 储蓄卡</span>
+					</p>
+					<p>
+						<span class="tit">手机号&nbsp;:&nbsp;</span>
+						<span class="cont">188888888888</span>
+					</p>
+				</div>
+			</dd>
+		</dl>
+	</div>
+	
+	<div class="add-bankbox">
+		<a href='#'>+&nbsp;添加银行卡</a>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$(document).on('click','.delt',function(){
+				var r=confirm('您要删除此银行卡吗？');
+				if(r==true){
+					alert("ok");
+				}else{
+					alert("ng");
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

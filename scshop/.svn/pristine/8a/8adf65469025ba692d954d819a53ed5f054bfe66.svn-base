@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>登录</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.5.6/css/sm.min.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.5.6/css/sm-extend.min.css">
+<link rel="stylesheet" href="${base}/static/fonts/iconfont.css">
+<link rel="stylesheet" href="${base}/static/css/myapp.css">
+</head>
+<body>
+	<div class="page login-box">
+	  	<div class="logobox">
+	  		<img src="${base}/static/images/login-logo.png" />
+	  	</div>
+	  	<div class="login-area">
+	  		<div class="login-group">
+	  			<label class="ico iconfont icon-daohangwo"></label>
+	  			<input type="text" id="phone" class="login-ipt" placeholder="手机号" />
+	  		</div>
+	  		<div class="login-group">
+	  			<label class="ico iconfont icon-mima"></label>
+	  			<input type="password" id="pwd" class="login-ipt" placeholder="登录密码" />
+	  		</div>
+
+	  		<div class="defaultbtnbox">
+	  			<button type="button" class="defaultbtn" onclick="update()">登录</button>
+	  			<div class="login-other">
+	  				<a class="login-wjmm external" href='customer!forgetpass.action'>忘记密码？</a>
+	  				<a class='login-zczh external' href='register.action'>注册帐号</a>
+	  			</div>
+	  		</div>
+	  		
+	  	</div>
+	</div>
+	<script type='text/javascript'>
+	function update()
+		{
+			var phone=$("#phone").val();
+			var pass=$("#pwd").val();
+			if(phone=="" || pass==""){
+			    $.alert("帐号或密码不能为空");
+			}			
+			else{
+				$.ajax({
+					url:"json/login!in.action",
+					data:{"phone":phone,"pwd":pass},
+					success:function(html){
+						if(html=="success"){
+							$.alert("登录成功！");
+							<#if redirecturl??>
+							location.href="${redirecturl}";
+							<#else>
+							location.href="index.action";
+							</#if>
+							
+						
+						}else{
+							$.alert("账号或者密码错误");
+						}
+					}
+				})
+			}
+		}
+	</script>
+
+	<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.5.7/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.5.7/js/sm-extend.min.js' charset='utf-8'></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>全部商品</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 避免IE使用兼容模式，IE 运行最新的渲染模式,用 Chrome 框架的页面用webkit 内核-->
+	<meta name="renderer" content="webkit">
+	<!-- 启用360浏览器的极速模式(webkit) -->
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+	<!-- 初始化移动浏览显示,移动端必须使用 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="imagemode" content="force">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- 危险勿动 -->
+    <script type="text/javascript">
+	!function(n){var e=n.document,t=e.documentElement,i=1080,d=i/150,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>1080&&(n=1080),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="../fonts/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../basestyle/stylesheets/shops.css">
+	<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body class="spall-padd">
+	<div class="content">
+		<header class="shops-head headfixed">
+			<a href="#" class="head-left"><i class="iconfont icon-xiangzuo1"></i></a>
+			<div class="head-tit">
+				<a href="#" class="head-ss">
+					<i class="iconfont icon-sousuo1 ssicon"></i>搜索商铺内商品
+				</a>
+			</div>
+			<a href="#" class="head-right"><i class="iconfont icon-fenleisousuo2"></i></a>
+		</header>
+
+		<div class="spall-nav">
+			<a href="#" class="spall-tab">综合</a>
+			<a href="#" class="spall-tab">销量</a>
+			<a href="#" class="spall-tab">新品</a>
+			<a href="#" class="spall-tab active sjxbtn">价格<i class="sort desc"></i></a>
+		</div>
+		<div class="shops-box mg-top">
+			<div class="shops-area">
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+				<a href="#">
+					<div class="shops-img">
+						<img src="../images/2000.jpg"> <!-- 315*250 -->
+					</div>
+					<p class="spgj">
+						<img src="../images/gq.png"><span>澳大利亚</span>
+					</p>
+					<h3 class="shops-name">新品推荐新品推荐新品推荐</h3>
+					<p class="shops-price">&yen;400.00 <span class="spzk">5.0折</span></p>
+					<p class="shops-cdj">国内参考价&nbsp;&yen;&nbsp;800.00</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<a href='#' class="gotop"><i class="iconfont icon-top2"></i></a>
+
+	<script type="text/javascript">
+		
+		$(function () {
+			$(document).on('click','.sjxbtn',function(){
+				var _this=$(this);
+				if(_this.find('.sort').hasClass('asc')){
+					_this.find('.sort').removeClass('asc').addClass('desc');
+				}else{
+					_this.find('.sort').removeClass('desc').addClass('asc');
+				}
+			})
+
+			//超出显示内容
+			$(".gotop").hide();              
+	      	$(window).on('scroll',function(){
+	          	var sTop = $(window).scrollTop();  
+	          	var sTop = parseInt(sTop);  
+	          	if (sTop >= 300) { 
+	          		$(".gotop").show();
+	          	}
+	          	else {
+	              	$(".gotop").hide();
+	          	}
+	      	});
+	    })
+		//点击返回顶部
+	   	$(document).ready(function($){
+			var offset = 200,
+				offset_opacity = 1200,
+				scroll_top_duration = 700,
+				$back_to_top = $('.gotop');
+
+			$(window).scroll(function(){
+				( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+				if( $(this).scrollTop() > offset_opacity ) { 
+					$back_to_top.addClass('cd-fade-out');
+				}
+			});
+			$back_to_top.on('click', function(event){
+				event.preventDefault();
+				$('body,html').animate({
+					scrollTop: 0 ,
+				 	}, scroll_top_duration
+				);
+			});
+		});
+	</script>
+</body>
+</html>

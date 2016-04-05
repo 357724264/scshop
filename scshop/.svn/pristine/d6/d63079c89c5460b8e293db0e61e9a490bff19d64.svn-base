@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<!-- 是否显示详细错误信息 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 国际化资源文件名称 -->
+	<constant name="struts.custom.i18n.resources" value="i18n" />
+	<!-- 打开动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 是否自动加载国际化资源文件 -->
+	<constant name="struts.i18n.reload" value="false" />
+	<!-- convention类重新加载 -->
+	<constant name="struts.convention.classes.reload" value="false" />
+	<!-- 浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="true" />
+	<!-- 配置使用Spring管理Action -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 上传文件大小限制设置 -->
+	<constant name="struts.multipart.maxSize" value="-1" />
+	<!-- 主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 后缀 -->
+	<constant name="struts.action.extension" value="action" />
+
+	<!-- 结果资源的路径 -->
+	<constant name="struts.convention.result.path" value="/WEB-INF/template/" />
+	<!-- URL资源分隔符 -->
+	<constant name="struts.convention.action.name.separator"
+		value="_" />
+
+	<package name="basePackage" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="baseStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<interceptor-ref name="scopedModelDriven" />
+				<interceptor-ref name="modelDriven" />
+				<interceptor-ref name="fileUpload" />
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<!-- 配置方法级别的校验 -->
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+					<param name="validateAnnotatedMethodOnly">true</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+
+			</interceptor-stack>
+
+		</interceptors>
+
+		<!-- 配置默认拦截器栈 -->
+		<default-interceptor-ref name="baseStack" />
+
+		<!-- 未到找Action指向页面 -->
+		<default-action-ref name="errorPage" />
+		<global-results>
+			<result name="error" type="freemarker">/WEB-INF/template/error_page.ftl
+			</result>
+		</global-results>
+		<action name="errorPage">
+			<result type="redirect">/html/error_page_404.html</result>
+		</action>
+
+	</package>
+	<package name="front" extends="basePackage">
+		<interceptors>
+			<interceptor name="loginVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.LoginVerifyInterceptor" />
+			<interceptor-stack name="memberStack">
+				<interceptor-ref name="loginVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="memberStack" />
+		<global-results>
+			<result name="tovip" type="redirect">vip!pay.jsp
+			</result>
+			<result name="error" type="freemarker">/WEB-INF/template/page/xf/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+	<package name="user" extends="basePackage">
+		<interceptors>
+			<interceptor name="userVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.UserVerifyIntercetor" />
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="userVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="userStack" />
+		<global-results>
+			<result name="error" type="freemarker">/WEB-INF/template/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+		<package name="appUser" extends="basePackage">
+		<interceptors>
+			<interceptor name="appUserVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.APPUserVerifyIntercetor" />
+			<interceptor-stack name="appUserStack">
+				<interceptor-ref name="appUserVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="appUserStack" />
+		<global-results>
+			<result name="error" type="freemarker">/WEB-INF/template/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+	<package name="admin" extends="basePackage">
+		<interceptors>
+			<interceptor name="adminVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.AdminVerifyIntercetor" />
+			<interceptor-stack name="adminStack">
+				<interceptor-ref name="adminVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="adminStack" />
+		<global-results>
+			<result name="error" type="freemarker">/WEB-INF/template/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+	<package name="adminjson" extends="basePackage">
+		<interceptors>
+			<interceptor name="adminjsonVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.AdminJsonVerifyIntercetor" />
+			<interceptor-stack name="adminjsonStack">
+				<interceptor-ref name="adminjsonVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="adminjsonStack" />
+		<global-results>
+			<result name="error" type="freemarker">/WEB-INF/template/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+	<package name="app" extends="basePackage">
+		<interceptors>
+			<interceptor name="appVerifyInterceptor"
+				class="com.wudianyi.wb.scshop.common.AppVerifyInterceptor" />
+			<interceptor-stack name="appStack">
+				<interceptor-ref name="appVerifyInterceptor" />
+				<interceptor-ref name="baseStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="appStack" />
+		<global-results>
+			<result name="tovip" type="redirect">vip!pay.jsp
+			</result>
+			<result name="error" type="freemarker">/WEB-INF/template/page/xf/error_page.ftl
+			</result>
+		</global-results>
+	</package>
+
+</struts>

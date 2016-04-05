@@ -1,0 +1,10 @@
+jdbc.driver=com.mysql.jdbc.Driver
+#jdbc.url=jdbc\:mysql\://18029096369.oicp.net\:9988/scshop?useUnicode\=true&amp;characterEncoding\=UTF-8
+#jdbc.username=root
+#jdbc.password=111111
+jdbc.url=jdbc\:mysql\://rdst933xjd6exy3bmkn0o.mysql.rds.aliyuncs.com\:3306/scshop?useUnicode\=true&amp;characterEncoding\=UTF-8
+jdbc.username=scshop
+jdbc.password=P_ssw0rd
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.show_sql=true
+hibernate.format_sql=false
